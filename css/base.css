@@ -359,3 +359,62 @@ a { color: var(--brand-dark); }
   .cards-output { margin: 0; }
 }
 
+/*---*\ #COPYWORK / HANDWRITING \*---*/
+.check-label { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.95rem; }
+.check-label input { width: 16px; height: 16px; }
+.worksheet-output { margin-top: 12px; }
+.worksheet {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.5in;
+}
+.hw-lg { --line-h: 0.8in; --hw-font: 0.30in; }
+.hw-md { --line-h: 0.58in; --hw-font: 0.22in; }
+.hw-sm { --line-h: 0.46in; --hw-font: 0.16in; }
+.hw-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+.hw-title {
+  font-family: var(--font);
+  font-weight: 700;
+  color: var(--brand-dark);
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 0 0 16px;
+}
+.hw-block {
+  font-family: var(--font);
+  font-size: var(--hw-font);
+  line-height: var(--line-h);
+  letter-spacing: 0.03em;
+  margin-bottom: calc(var(--line-h) * 0.5);
+  background-image: repeating-linear-gradient(to bottom,
+    transparent 0, transparent calc(var(--line-h) - 1.4px),
+    #bcb09a calc(var(--line-h) - 1.4px), #bcb09a var(--line-h));
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.hw-block.trace { color: #cbc3b4; }
+.hw-block.model { color: var(--ink); }
+.hw-blanks {
+  height: calc(var(--line-h) * var(--n, 6));
+  background-image: repeating-linear-gradient(to bottom,
+    transparent 0, transparent calc(var(--line-h) - 1.4px),
+    #bcb09a calc(var(--line-h) - 1.4px), #bcb09a var(--line-h));
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+@media print {
+  .worksheet { border: none; border-radius: 0; padding: 0; }
+  .worksheet-output { margin: 0; }
+}
+
