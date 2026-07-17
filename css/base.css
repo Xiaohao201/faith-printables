@@ -232,3 +232,124 @@ a { color: var(--brand-dark); }
   .plan-table th, .plan-table td { border-bottom: 1px solid #ccc; }
   a { color: #000; text-decoration: none; }
 }
+
+/*---*\ #MEMORY CARDS \*---*/
+.hint-inline { font-weight: 400; color: var(--ink-faint); font-size: 0.85rem; }
+.verse-rows { display: flex; flex-direction: column; gap: 10px; margin: 6px 0 12px; }
+.verse-row {
+  display: grid;
+  grid-template-columns: 200px 1fr auto;
+  gap: 10px;
+  align-items: start;
+}
+@media (max-width: 620px) {
+  .verse-row { grid-template-columns: 1fr auto; }
+  .verse-row .verse-text { grid-column: 1 / -1; }
+}
+.verse-row .verse-ref,
+.verse-row .verse-text {
+  width: 100%;
+  padding: 9px 11px;
+  font-size: 0.95rem;
+  font-family: var(--font-ui);
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.verse-row .verse-text { resize: vertical; min-height: 44px; }
+.verse-row .verse-ref:focus,
+.verse-row .verse-text:focus { outline: 2px solid var(--focus); outline-offset: 1px; }
+.row-remove {
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink-faint);
+  border-radius: 8px;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.row-remove:hover { border-color: var(--danger); color: var(--danger); }
+.btn-add { margin-top: 4px; padding: 8px 16px; font-size: 0.92rem; }
+
+/* Card preview + print grid. Sizes are in inches so screen ≈ print. */
+.cards-output { margin-top: 12px; }
+.mc-page {
+  display: grid;
+  gap: 0;
+  width: 6.8in;
+  max-width: 100%;
+  margin: 0 auto 16px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.mc-grid-4 { grid-template-columns: repeat(2, 3.4in); }
+.mc-grid-8 { grid-template-columns: repeat(2, 3.4in); }
+.mc-card {
+  position: relative;
+  border: 1px dashed #b7ab97;
+  padding: 0.28in;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.12in;
+  overflow: hidden;
+  background: #fff;
+}
+.mc-grid-4 .mc-card { min-height: 4.1in; }
+.mc-grid-8 .mc-card { min-height: 2.0in; padding: 0.2in; }
+.mc-ref {
+  font-family: var(--font);
+  font-weight: 700;
+  color: var(--brand-dark);
+  font-size: 1.15rem;
+  text-align: center;
+}
+.mc-text {
+  font-family: var(--font);
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.45;
+  text-align: center;
+}
+.mc-grid-8 .mc-ref { font-size: 1rem; }
+.mc-grid-8 .mc-text { font-size: 0.85rem; line-height: 1.35; }
+.mc-trans {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  text-align: center;
+}
+
+/* Fold-over card: two equal halves split by a fold line; the back (top)
+   half is rotated 180° so it reads upright once folded behind the front. */
+.mc-fold { padding: 0; justify-content: stretch; }
+.mc-fold .mc-half {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1in;
+  padding: 0.22in;
+}
+.mc-fold .mc-back { transform: rotate(180deg); }
+.mc-foldline { border-top: 1px dashed #c9bda8; }
+
+@media print {
+  .mc-page {
+    border: none;
+    width: auto;
+    margin: 0 auto;
+    page-break-after: always;
+    break-after: page;
+  }
+  .mc-page:last-child { page-break-after: auto; break-after: auto; }
+  .mc-card { border: 1px dashed #999; }
+  .mc-ref { color: #000; }
+  .cards-output { margin: 0; }
+}
+
