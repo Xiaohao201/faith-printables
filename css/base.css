@@ -225,7 +225,7 @@ a { color: var(--brand-dark); }
 /*---*\ #PRINT \*---*/
 @media print {
   .site-header, .site-nav, .tool-form, .prose, .site-footer,
-  .result-head .btn, .error-box { display: none !important; }
+  .result-head, .error-box, [data-caption] { display: none !important; }
   body { background: #fff; }
   .summary { background: none; padding: 0; border: 1px solid #ccc; padding: 10px; }
   .plan-table th { color: #000; }
@@ -339,6 +339,7 @@ a { color: var(--brand-dark); }
 .mc-fold .mc-back { transform: rotate(180deg); }
 .mc-foldline { border-top: 1px dashed #c9bda8; }
 
+@page { margin: 0.4in; }
 @media print {
   .mc-page {
     border: none;
@@ -346,9 +347,14 @@ a { color: var(--brand-dark); }
     margin: 0 auto;
     page-break-after: always;
     break-after: page;
+    break-inside: avoid;
   }
   .mc-page:last-child { page-break-after: auto; break-after: auto; }
-  .mc-card { border: 1px dashed #999; }
+  .mc-card {
+    border: 1px dashed #999;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
   .mc-ref { color: #000; }
   .cards-output { margin: 0; }
 }
