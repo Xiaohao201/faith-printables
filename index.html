@@ -17,16 +17,20 @@
     <div class="wrap">
       <a class="brand" href="index.html"><span class="mark">✦</span> Faith Printables</a>
       <nav class="site-nav">
-        <a href="index.html">All tools</a>
-        <a href="about.html">About</a>
+        <a href="index.html" data-i18n="nav.all_tools">All tools</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <span class="lang-switch">
+          <button type="button" data-lang-btn="en">EN</button>
+          <button type="button" data-lang-btn="zh">中文</button>
+        </span>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
     <section class="hero">
-      <h1>Free printable tools for your walk with God</h1>
-      <p class="lede">Simple, beautiful resources you can generate and print in seconds — no
+      <h1 data-i18n="hub.hero_title">Free printable tools for your walk with God</h1>
+      <p class="lede" data-i18n="hub.hero_lede">Simple, beautiful resources you can generate and print in seconds — no
         sign-up, nothing stored, always free. Made to help you spend more time in the Word and less
         time fiddling with formatting.</p>
     </section>
@@ -34,48 +38,49 @@
     <section class="tool-grid">
       <a class="tool-card" href="reading-plan/index.html">
         <div class="emoji">📖</div>
-        <h3>Bible Reading Plan Generator</h3>
-        <p>Build a dated, printable plan to read the whole Bible, the New Testament, or the Gospels
+        <h3 data-i18n="hub.card.rp.t">Bible Reading Plan Generator</h3>
+        <p data-i18n="hub.card.rp.d">Build a dated, printable plan to read the whole Bible, the New Testament, or the Gospels
           at your own pace.</p>
       </a>
 
       <a class="tool-card" href="memory-cards/index.html">
         <div class="emoji">🗂️</div>
-        <h3>Scripture Memory Cards</h3>
-        <p>Turn a list of verses into printable, cut-out flashcards — including fold-over cards for
+        <h3 data-i18n="hub.card.mc.t">Scripture Memory Cards</h3>
+        <p data-i18n="hub.card.mc.d">Turn a list of verses into printable, cut-out flashcards — including fold-over cards for
           testing yourself.</p>
       </a>
 
       <a class="tool-card" href="copywork/index.html">
         <div class="emoji">✏️</div>
-        <h3>Bible Verse Handwriting Sheets</h3>
-        <p>Printable Scripture tracing and copywork worksheets for kids — Sunday school and
+        <h3 data-i18n="hub.card.cw.t">Bible Verse Handwriting Sheets</h3>
+        <p data-i18n="hub.card.cw.d">Printable Scripture tracing and copywork worksheets for kids — Sunday school and
           homeschool ready.</p>
       </a>
 
       <a class="tool-card" href="prayer/index.html">
         <div class="emoji">🙏</div>
-        <h3>Prayer List &amp; Journal</h3>
-        <p>A clean, printable template to keep track of prayer requests and answered prayers.</p>
+        <h3 data-i18n="hub.card.pr.t">Prayer List &amp; Journal</h3>
+        <p data-i18n="hub.card.pr.d">A clean, printable template to keep track of prayer requests and answered prayers.</p>
       </a>
     </section>
 
     <section class="prose">
-      <h2>Why Faith Printables?</h2>
-      <p>Good tools should get out of the way. These do one thing each, do it well, and hand you a
+      <h2 data-i18n="hub.why_h">Why Faith Printables?</h2>
+      <p data-i18n="hub.why_p">Good tools should get out of the way. These do one thing each, do it well, and hand you a
         clean page to print. There are no accounts to create and nothing you enter is uploaded — the
-        pages are generated right in your browser. Whether you're planning a year in the Word,
-        leading a small group, or teaching children, we hope these save you time so you can give it
-        back to what matters.</p>
+        pages are generated right in your browser. Whether you're planning a year in the Word, leading
+        a small group, or teaching children, we hope these save you time so you can give it back to
+        what matters.</p>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <span>© <span id="year">2026</span> Faith Printables · Free printable tools for your walk with God.</span>
-      <span><a href="privacy.html">Privacy</a> · <a href="about.html">About</a></span>
+      <span>© <span id="year">2026</span> <span data-i18n="footer.copy_suffix">Faith Printables · Free printable tools for your walk with God.</span></span>
+      <span><a href="privacy.html" data-i18n="footer.privacy">Privacy</a> · <a href="about.html" data-i18n="footer.about">About</a></span>
     </div>
   </footer>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -86,6 +91,41 @@
     "publisher": { "@type": "Organization", "name": "Faith Printables", "url": "https://faithprintables.com/" }
   }
   </script>
+
+  <script src="js/i18n-common.js"></script>
+  <script>
+  window.I18N_PAGE = {
+    en: {
+      "hub.hero_title": `Free printable tools for your walk with God`,
+      "hub.hero_lede": `Simple, beautiful resources you can generate and print in seconds — no sign-up, nothing stored, always free. Made to help you spend more time in the Word and less time fiddling with formatting.`,
+      "hub.card.rp.t": `Bible Reading Plan Generator`,
+      "hub.card.rp.d": `Build a dated, printable plan to read the whole Bible, the New Testament, or the Gospels at your own pace.`,
+      "hub.card.mc.t": `Scripture Memory Cards`,
+      "hub.card.mc.d": `Turn a list of verses into printable, cut-out flashcards — including fold-over cards for testing yourself.`,
+      "hub.card.cw.t": `Bible Verse Handwriting Sheets`,
+      "hub.card.cw.d": `Printable Scripture tracing and copywork worksheets for kids — Sunday school and homeschool ready.`,
+      "hub.card.pr.t": `Prayer List & Journal`,
+      "hub.card.pr.d": `A clean, printable template to keep track of prayer requests and answered prayers.`,
+      "hub.why_h": `Why Faith Printables?`,
+      "hub.why_p": `Good tools should get out of the way. These do one thing each, do it well, and hand you a clean page to print. There are no accounts to create and nothing you enter is uploaded — the pages are generated right in your browser. Whether you're planning a year in the Word, leading a small group, or teaching children, we hope these save you time so you can give it back to what matters.`
+    },
+    zh: {
+      "hub.hero_title": `免费的可打印工具，陪你与神同行`,
+      "hub.hero_lede": `简单、精致的资源，几秒钟就能生成并打印 —— 无需注册、不留数据、永远免费。为的是让你更多亲近神的话语，少花时间在排版上。`,
+      "hub.card.rp.t": `圣经读经计划生成器`,
+      "hub.card.rp.d": `生成一份带日期、可打印的计划，按你自己的节奏读完整本圣经、新约或四福音书。`,
+      "hub.card.mc.t": `经文记忆卡`,
+      "hub.card.mc.d": `把一串经文做成可打印、可裁剪的卡片 —— 包括正反面对折卡，方便自测。`,
+      "hub.card.cw.t": `经文抄写练习页`,
+      "hub.card.cw.d": `可打印的经文描红与抄写练习纸，适合主日学和在家教育。`,
+      "hub.card.pr.t": `祷告清单与日志`,
+      "hub.card.pr.d": `干净、可打印的模板，用来记录祷告事项与已蒙应允的祷告。`,
+      "hub.why_h": `为什么是 Faith Printables？`,
+      "hub.why_p": `好的工具应当不碍事。这里每个工具只做一件事、并把它做好，然后交给你一页干净、可打印的纸。不用注册账号，你输入的任何内容也不会上传 —— 页面都在你的浏览器里生成。无论你是在计划一年的读经、带领小组，还是教导孩子，愿这些工具为你省下时间，好让你把它交还给真正重要的事。`
+    }
+  };
+  </script>
+  <script src="js/i18n.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   <!-- Cloudflare Web Analytics -->
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "88510c50ba01492f864a6d309e3aa100"}'></script>

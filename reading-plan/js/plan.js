@@ -4,11 +4,20 @@
 const MAX_DAYS = 1500;
 const MIN_DAYS = 1;
 
+// Errors carry a `code` (and optional `params`) so the UI can translate them.
+function planError(code, message, params) {
+  const err = new Error(message);
+  err.code = code;
+  if (params) err.params = params;
+  return err;
+}
+
 // Expand the chosen books into a flat, ordered list of chapter units.
 function buildChapterUnits(books) {
   return books.reduce((units, book) => {
     const chapters = Array.from({ length: book.chapters }, (_, i) => ({
       book: book.name,
+      zh: book.zh,
       chapter: i + 1,
     }));
     return units.concat(chapters);
@@ -50,25 +59,28 @@ function generateDates(startDate, days, daysPerWeek) {
 
 // Collapse a day's chapter units into a compact human reference,
 // e.g. [{Genesis,1},{Genesis,2},{Genesis,3}] -> "Genesis 1–3".
-function formatReadings(dayUnits) {
+function formatReadings(dayUnits, lang) {
   if (dayUnits.length === 0) return "—";
   const groups = dayUnits.reduce((acc, unit) => {
     const last = acc[acc.length - 1];
     if (last && last.book === unit.book && unit.chapter === last.end + 1) {
       return acc.slice(0, -1).concat({ ...last, end: unit.chapter });
     }
-    return acc.concat({ book: unit.book, start: unit.chapter, end: unit.chapter });
+    return acc.concat({ book: unit.book, zh: unit.zh, start: unit.chapter, end: unit.chapter });
   }, []);
 
   return groups
-    .map((g) => (g.start === g.end ? `${g.book} ${g.start}` : `${g.book} ${g.start}–${g.end}`))
-    .join(", ");
+    .map((g) => {
+      const name = lang === "zh" ? g.zh : g.book;
+      return g.start === g.end ? `${name} ${g.start}` : `${name} ${g.start}–${g.end}`;
+    })
+    .join(lang === "zh" ? "，" : ", ");
 }
 
 const DATE_FORMAT = { year: "numeric", month: "short", day: "numeric" };
 
-function formatDate(date) {
-  return date.toLocaleDateString("en-US", DATE_FORMAT);
+function formatDate(date, locale) {
+  return date.toLocaleDateString(locale || "en-US", DATE_FORMAT);
 }
 
 // Main entry point. Validates options and returns a plan or throws a
@@ -77,28 +89,32 @@ function formatDate(date) {
 function generatePlan(options) {
   const scope = PLAN_SCOPES[options.scope];
   if (!scope) {
-    throw new Error("Please choose a valid reading scope.");
+    throw planError("scope", "Please choose a valid reading scope.");
   }
   if (!(options.startDate instanceof Date) || Number.isNaN(options.startDate.getTime())) {
-    throw new Error("Please pick a valid start date.");
+    throw planError("date", "Please pick a valid start date.");
   }
 
   const days = Math.round(options.days);
   if (!Number.isFinite(days) || days < MIN_DAYS || days > MAX_DAYS) {
-    throw new Error(`Number of days must be between ${MIN_DAYS} and ${MAX_DAYS}.`);
+    throw planError("days_range", `Number of days must be between ${MIN_DAYS} and ${MAX_DAYS}.`);
   }
 
   const daysPerWeek = options.daysPerWeek === 6 ? 6 : 7;
+  const lang = options.lang === "zh" ? "zh" : "en";
+  const locale = lang === "zh" ? "zh-CN" : "en-US";
 
   const books = BIBLE_BOOKS.filter(scope.filter);
   const units = buildChapterUnits(books);
 
   if (units.length === 0) {
-    throw new Error("The selected scope has no chapters to schedule.");
+    throw planError("no_chapters", "The selected scope has no chapters to schedule.");
   }
   if (days > units.length) {
-    throw new Error(
-      `That scope has only ${units.length} chapters, so it can't be spread over ${days} days. Try fewer days.`
+    throw planError(
+      "too_many_days",
+      `That scope has only ${units.length} chapters, so it can't be spread over ${days} days. Try fewer days.`,
+      { chapters: units.length, days }
     );
   }
 
@@ -108,19 +124,20 @@ function generatePlan(options) {
 
   const rows = readings.map((dayUnits, i) => ({
     day: i + 1,
-    date: formatDate(dates[i]),
-    reading: formatReadings(dayUnits),
+    date: formatDate(dates[i], locale),
+    reading: formatReadings(dayUnits, lang),
   }));
 
   const perDay = (units.length / days).toFixed(1);
   const meta = {
+    scopeKey: options.scope,
     scopeLabel: scope.label,
     totalChapters: units.length,
     days,
     perDay,
     daysPerWeek,
-    startLabel: formatDate(dates[0]),
-    endLabel: formatDate(dates[dates.length - 1]),
+    startLabel: formatDate(dates[0], locale),
+    endLabel: formatDate(dates[dates.length - 1], locale),
   };
 
   return { meta, rows };

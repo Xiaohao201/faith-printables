@@ -63,8 +63,31 @@ a { color: var(--brand-dark); }
   gap: 8px;
 }
 .brand .mark { color: var(--brand); }
+.site-nav { display: flex; align-items: center; }
 .site-nav a { margin-left: 18px; color: var(--ink-soft); text-decoration: none; font-size: 0.95rem; }
 .site-nav a:hover { color: var(--brand-dark); }
+.lang-switch {
+  display: inline-flex;
+  margin-left: 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.lang-switch button {
+  border: none;
+  background: transparent;
+  padding: 4px 11px;
+  font-size: 0.8rem;
+  font-family: var(--font-ui);
+  color: var(--ink-soft);
+  cursor: pointer;
+  line-height: 1.4;
+}
+.lang-switch button.active { background: var(--brand); color: #fff; }
+@media (max-width: 480px) {
+  .site-nav a { margin-left: 12px; font-size: 0.9rem; }
+  .lang-switch { margin-left: 10px; }
+}
 
 /*---*\ #HERO \*---*/
 .hero { padding: 48px 0 8px; }

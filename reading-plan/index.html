@@ -18,16 +18,20 @@
     <div class="wrap">
       <a class="brand" href="../index.html"><span class="mark">✦</span> Faith Printables</a>
       <nav class="site-nav">
-        <a href="../index.html">All tools</a>
-        <a href="../about.html">About</a>
+        <a href="../index.html" data-i18n="nav.all_tools">All tools</a>
+        <a href="../about.html" data-i18n="nav.about">About</a>
+        <span class="lang-switch">
+          <button type="button" data-lang-btn="en">EN</button>
+          <button type="button" data-lang-btn="zh">中文</button>
+        </span>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
     <section class="hero">
-      <h1>Bible Reading Plan Generator</h1>
-      <p class="lede">Pick what you want to read and how long you want to take. We'll build a
+      <h1 data-i18n="rp.title">Bible Reading Plan Generator</h1>
+      <p class="lede" data-i18n="rp.lede">Pick what you want to read and how long you want to take. We'll build a
         day-by-day schedule you can print or save as a PDF — free, and nothing to sign up for.</p>
     </section>
 
@@ -35,124 +39,124 @@
       <div class="error-box" data-error hidden></div>
 
       <div class="field">
-        <label for="scope">What do you want to read?</label>
+        <label for="scope" data-i18n="rp.scope_label">What do you want to read?</label>
         <select id="scope" name="scope">
-          <option value="whole-bible">The whole Bible (1,189 chapters)</option>
-          <option value="new-testament">New Testament (260 chapters)</option>
-          <option value="old-testament">Old Testament (929 chapters)</option>
-          <option value="gospels">The Gospels — Matthew to John (89 chapters)</option>
-          <option value="psalms-proverbs">Psalms &amp; Proverbs (181 chapters)</option>
+          <option value="whole-bible" data-i18n="rp.opt.whole">The whole Bible (1,189 chapters)</option>
+          <option value="new-testament" data-i18n="rp.opt.nt">New Testament (260 chapters)</option>
+          <option value="old-testament" data-i18n="rp.opt.ot">Old Testament (929 chapters)</option>
+          <option value="gospels" data-i18n="rp.opt.gospels">The Gospels — Matthew to John (89 chapters)</option>
+          <option value="psalms-proverbs" data-i18n="rp.opt.psalms">Psalms &amp; Proverbs (181 chapters)</option>
         </select>
       </div>
 
       <div class="field-row">
         <div class="field">
-          <label for="duration">Finish in</label>
+          <label for="duration" data-i18n="rp.duration_label">Finish in</label>
           <select id="duration" name="duration" data-duration>
-            <option value="365">1 year (365 readings)</option>
-            <option value="180">6 months (180 readings)</option>
-            <option value="90">90 days</option>
-            <option value="30">30 days</option>
-            <option value="custom">Custom…</option>
+            <option value="365" data-i18n="rp.dur.year">1 year (365 readings)</option>
+            <option value="180" data-i18n="rp.dur.6mo">6 months (180 readings)</option>
+            <option value="90" data-i18n="rp.dur.90">90 days</option>
+            <option value="30" data-i18n="rp.dur.30">30 days</option>
+            <option value="custom" data-i18n="rp.dur.custom">Custom…</option>
           </select>
         </div>
         <div class="field" data-custom-days-field hidden>
-          <label for="customDays">Number of readings</label>
+          <label for="customDays" data-i18n="rp.custom_label">Number of readings</label>
           <input type="number" id="customDays" data-custom-days min="1" max="1500" step="1" value="60">
-          <p class="hint">Between 1 and 1500.</p>
+          <p class="hint" data-i18n="rp.custom_hint">Between 1 and 1500.</p>
         </div>
       </div>
 
       <div class="field-row">
         <div class="field">
-          <label for="startDate">Start date</label>
+          <label for="startDate" data-i18n="rp.start_label">Start date</label>
           <input type="date" id="startDate" name="startDate">
         </div>
         <div class="field">
-          <label for="daysPerWeek">Reading rhythm</label>
+          <label for="daysPerWeek" data-i18n="rp.rhythm_label">Reading rhythm</label>
           <select id="daysPerWeek" name="daysPerWeek">
-            <option value="7">Every day</option>
-            <option value="6">6 days a week (Sundays off to rest / catch up)</option>
+            <option value="7" data-i18n="rp.rhythm.every">Every day</option>
+            <option value="6" data-i18n="rp.rhythm.six">6 days a week (Sundays off to rest / catch up)</option>
           </select>
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary">Build my plan</button>
+      <button type="submit" class="btn btn-primary" data-i18n="rp.submit">Build my plan</button>
     </form>
 
     <section class="result" data-result hidden>
       <div class="result-head">
-        <h2>Your reading plan</h2>
-        <button type="button" class="btn btn-ghost" data-print>🖨 Print / Save as PDF</button>
+        <h2 data-i18n="rp.result_title">Your reading plan</h2>
+        <button type="button" class="btn btn-ghost" data-print data-i18n="action.print">🖨 Print / Save as PDF</button>
       </div>
       <div class="summary" data-summary></div>
       <table class="plan-table">
         <thead>
-          <tr><th></th><th>Day</th><th>Date</th><th>Reading</th></tr>
+          <tr><th></th><th data-i18n="rp.col.day">Day</th><th data-i18n="rp.col.date">Date</th><th data-i18n="rp.col.reading">Reading</th></tr>
         </thead>
         <tbody data-plan-body></tbody>
       </table>
     </section>
 
     <section class="prose">
-      <h2>How this Bible reading plan generator works</h2>
-      <p>Reading through Scripture is simpler when you can see the whole journey on one page. This
+      <h2 data-i18n="rp.h.how">How this Bible reading plan generator works</h2>
+      <p data-i18n="rp.p.how">Reading through Scripture is simpler when you can see the whole journey on one page. This
         free tool spreads your chosen portion of the Bible evenly across the number of days you
         pick, then lays out a dated checklist. Tick a box each day and you'll always know exactly
         where you are — and how far you've come.</p>
       <ul>
-        <li><strong>Choose a portion.</strong> The whole Bible, either Testament on its own, the
+        <li data-i18n-html="rp.li.portion"><strong>Choose a portion.</strong> The whole Bible, either Testament on its own, the
           four Gospels, or Psalms &amp; Proverbs for a devotional rhythm.</li>
-        <li><strong>Set your pace.</strong> A classic one-year plan, six months, 90 days, 30 days,
+        <li data-i18n-html="rp.li.pace"><strong>Set your pace.</strong> A classic one-year plan, six months, 90 days, 30 days,
           or any custom length that fits your season of life.</li>
-        <li><strong>Pick your rhythm.</strong> Read every day, or six days a week with Sundays left
+        <li data-i18n-html="rp.li.rhythm"><strong>Pick your rhythm.</strong> Read every day, or six days a week with Sundays left
           open to rest or catch up — one of the most common reasons people fall behind and quit.</li>
-        <li><strong>Print it or save a PDF.</strong> Keep it in your Bible, on the fridge, or share
+        <li data-i18n-html="rp.li.print"><strong>Print it or save a PDF.</strong> Keep it in your Bible, on the fridge, or share
           copies with a small group so you can read together.</li>
       </ul>
 
-      <h2>A few tips for staying with it</h2>
-      <p>Most reading plans are abandoned in the first few weeks, not because the reader lost
+      <h2 data-i18n="rp.h.tips">A few tips for staying with it</h2>
+      <p data-i18n="rp.p.tips1">Most reading plans are abandoned in the first few weeks, not because the reader lost
         interest but because a couple of missed days turned into a backlog that felt impossible to
         clear. A six-day rhythm builds in margin on purpose. If you do fall behind, resist the urge
         to start over — just pick up on today's date and keep moving. Consistency over a year
         matters far more than a perfect record in January.</p>
-      <p>Reading with other people helps too. Print a copy for everyone in a small group, a family,
+      <p data-i18n="rp.p.tips2">Reading with other people helps too. Print a copy for everyone in a small group, a family,
         or a couple of friends, and check in on what you're each noticing. The same passage read by
         several people almost always surfaces something you would have read straight past.</p>
 
-      <h2 id="translation">Which Bible translation should I use?</h2>
-      <p>This planner lists chapters by reference (for example, <em>John 1–3</em>), so it works with
+      <h2 id="translation" data-i18n="rp.h.trans">Which Bible translation should I use?</h2>
+      <p data-i18n-html="rp.p.trans">This planner lists chapters by reference (for example, <em>John 1–3</em>), so it works with
         any translation you already own or read in an app. The references are the same whether you
         read the KJV, ESV, NIV, CSB, or any other version, so use whichever translation you find
         easiest to understand and most enjoyable to read.</p>
 
       <div class="faq">
-        <h2>Frequently asked questions</h2>
+        <h2 data-i18n="rp.h.faq">Frequently asked questions</h2>
         <details>
-          <summary>Is this Bible reading plan really free?</summary>
-          <p>Yes. There's no charge, no account, and no email required. Build as many plans as you
+          <summary data-i18n="rp.faq.q1">Is this Bible reading plan really free?</summary>
+          <p data-i18n="rp.faq.a1">Yes. There's no charge, no account, and no email required. Build as many plans as you
             like and print each one.</p>
         </details>
         <details>
-          <summary>Does the plan get emailed to me or saved online?</summary>
-          <p>No. Everything is generated right in your browser. Nothing you enter is uploaded or
+          <summary data-i18n="rp.faq.q2">Does the plan get emailed to me or saved online?</summary>
+          <p data-i18n="rp.faq.a2">No. Everything is generated right in your browser. Nothing you enter is uploaded or
             stored on a server. To keep a plan, print it or use your browser's "Save as PDF" option.</p>
         </details>
         <details>
-          <summary>How many chapters a day is reading the whole Bible in a year?</summary>
-          <p>The Bible has 1,189 chapters, so a 365-day plan averages a little over three chapters a
+          <summary data-i18n="rp.faq.q3">How many chapters a day is reading the whole Bible in a year?</summary>
+          <p data-i18n="rp.faq.a3">The Bible has 1,189 chapters, so a 365-day plan averages a little over three chapters a
             day. The exact reading for each day is shown in your generated plan.</p>
         </details>
         <details>
-          <summary>Can I read the Bible in 90 days?</summary>
-          <p>Yes — choose the whole Bible and a 90-day length. That's a faster pace of roughly
+          <summary data-i18n="rp.faq.q4">Can I read the Bible in 90 days?</summary>
+          <p data-i18n="rp.faq.a4">Yes — choose the whole Bible and a 90-day length. That's a faster pace of roughly
             thirteen chapters a day, which many people enjoy for the "big picture" it gives. If
             that's too much, six months is a gentler alternative.</p>
         </details>
         <details>
-          <summary>What if I miss a few days?</summary>
-          <p>Don't start over. Continue on today's date, and consider using the six-day rhythm so
+          <summary data-i18n="rp.faq.q5">What if I miss a few days?</summary>
+          <p data-i18n="rp.faq.a5">Don't start over. Continue on today's date, and consider using the six-day rhythm so
             Sundays are free to catch up. Finishing slightly late is still finishing.</p>
         </details>
       </div>
@@ -161,8 +165,8 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <span>© <span id="year">2026</span> Faith Printables · Free printable tools for your walk with God.</span>
-      <span><a href="../privacy.html">Privacy</a> · <a href="../about.html">About</a></span>
+      <span>© <span id="year">2026</span> <span data-i18n="footer.copy_suffix">Faith Printables · Free printable tools for your walk with God.</span></span>
+      <span><a href="../privacy.html" data-i18n="footer.privacy">Privacy</a> · <a href="../about.html" data-i18n="footer.about">About</a></span>
     </div>
   </footer>
 
@@ -180,8 +184,139 @@
     "publisher": { "@type": "Organization", "name": "Faith Printables", "url": "https://faithprintables.com/" }
   }
   </script>
+
   <script src="js/books.js"></script>
   <script src="js/plan.js"></script>
+  <script src="../js/i18n-common.js"></script>
+  <script>
+  window.I18N_PAGE = {
+    en: {
+      "rp.title": `Bible Reading Plan Generator`,
+      "rp.lede": `Pick what you want to read and how long you want to take. We'll build a day-by-day schedule you can print or save as a PDF — free, and nothing to sign up for.`,
+      "rp.scope_label": `What do you want to read?`,
+      "rp.opt.whole": `The whole Bible (1,189 chapters)`,
+      "rp.opt.nt": `New Testament (260 chapters)`,
+      "rp.opt.ot": `Old Testament (929 chapters)`,
+      "rp.opt.gospels": `The Gospels — Matthew to John (89 chapters)`,
+      "rp.opt.psalms": `Psalms & Proverbs (181 chapters)`,
+      "rp.duration_label": `Finish in`,
+      "rp.dur.year": `1 year (365 readings)`,
+      "rp.dur.6mo": `6 months (180 readings)`,
+      "rp.dur.90": `90 days`,
+      "rp.dur.30": `30 days`,
+      "rp.dur.custom": `Custom…`,
+      "rp.custom_label": `Number of readings`,
+      "rp.custom_hint": `Between 1 and 1500.`,
+      "rp.start_label": `Start date`,
+      "rp.rhythm_label": `Reading rhythm`,
+      "rp.rhythm.every": `Every day`,
+      "rp.rhythm.six": `6 days a week (Sundays off to rest / catch up)`,
+      "rp.submit": `Build my plan`,
+      "rp.result_title": `Your reading plan`,
+      "rp.col.day": `Day`,
+      "rp.col.date": `Date`,
+      "rp.col.reading": `Reading`,
+      "rp.h.how": `How this Bible reading plan generator works`,
+      "rp.p.how": `Reading through Scripture is simpler when you can see the whole journey on one page. This free tool spreads your chosen portion of the Bible evenly across the number of days you pick, then lays out a dated checklist. Tick a box each day and you'll always know exactly where you are — and how far you've come.`,
+      "rp.li.portion": `<strong>Choose a portion.</strong> The whole Bible, either Testament on its own, the four Gospels, or Psalms & Proverbs for a devotional rhythm.`,
+      "rp.li.pace": `<strong>Set your pace.</strong> A classic one-year plan, six months, 90 days, 30 days, or any custom length that fits your season of life.`,
+      "rp.li.rhythm": `<strong>Pick your rhythm.</strong> Read every day, or six days a week with Sundays left open to rest or catch up — one of the most common reasons people fall behind and quit.`,
+      "rp.li.print": `<strong>Print it or save a PDF.</strong> Keep it in your Bible, on the fridge, or share copies with a small group so you can read together.`,
+      "rp.h.tips": `A few tips for staying with it`,
+      "rp.p.tips1": `Most reading plans are abandoned in the first few weeks, not because the reader lost interest but because a couple of missed days turned into a backlog that felt impossible to clear. A six-day rhythm builds in margin on purpose. If you do fall behind, resist the urge to start over — just pick up on today's date and keep moving. Consistency over a year matters far more than a perfect record in January.`,
+      "rp.p.tips2": `Reading with other people helps too. Print a copy for everyone in a small group, a family, or a couple of friends, and check in on what you're each noticing. The same passage read by several people almost always surfaces something you would have read straight past.`,
+      "rp.h.trans": `Which Bible translation should I use?`,
+      "rp.p.trans": `This planner lists chapters by reference (for example, <em>John 1–3</em>), so it works with any translation you already own or read in an app. The references are the same whether you read the KJV, ESV, NIV, CSB, or any other version, so use whichever translation you find easiest to understand and most enjoyable to read.`,
+      "rp.h.faq": `Frequently asked questions`,
+      "rp.faq.q1": `Is this Bible reading plan really free?`,
+      "rp.faq.a1": `Yes. There's no charge, no account, and no email required. Build as many plans as you like and print each one.`,
+      "rp.faq.q2": `Does the plan get emailed to me or saved online?`,
+      "rp.faq.a2": `No. Everything is generated right in your browser. Nothing you enter is uploaded or stored on a server. To keep a plan, print it or use your browser's "Save as PDF" option.`,
+      "rp.faq.q3": `How many chapters a day is reading the whole Bible in a year?`,
+      "rp.faq.a3": `The Bible has 1,189 chapters, so a 365-day plan averages a little over three chapters a day. The exact reading for each day is shown in your generated plan.`,
+      "rp.faq.q4": `Can I read the Bible in 90 days?`,
+      "rp.faq.a4": `Yes — choose the whole Bible and a 90-day length. That's a faster pace of roughly thirteen chapters a day, which many people enjoy for the "big picture" it gives. If that's too much, six months is a gentler alternative.`,
+      "rp.faq.q5": `What if I miss a few days?`,
+      "rp.faq.a5": `Don't start over. Continue on today's date, and consider using the six-day rhythm so Sundays are free to catch up. Finishing slightly late is still finishing.`,
+      "scope.whole-bible": `the whole Bible`,
+      "scope.new-testament": `the New Testament`,
+      "scope.old-testament": `the Old Testament`,
+      "scope.gospels": `the Gospels`,
+      "scope.psalms-proverbs": `Psalms & Proverbs`,
+      "rhythm.every": `every day`,
+      "rhythm.six": `6 days a week (Sundays off)`,
+      "summary.tpl": `{scope} in {days} readings · {perDay} chapters per reading, {rhythm} · {start} – {end}`,
+      "err.scope": `Please choose a valid reading scope.`,
+      "err.date": `Please pick a valid start date.`,
+      "err.days_range": `Number of days must be between 1 and 1500.`,
+      "err.no_chapters": `The selected scope has no chapters to schedule.`,
+      "err.too_many_days": `That scope has only {chapters} chapters, so it can't be spread over {days} days. Try fewer days.`
+    },
+    zh: {
+      "rp.title": `圣经读经计划生成器`,
+      "rp.lede": `选择你想读的部分和想用的时间，我们会为你生成一份按天排好的读经计划，可以打印或存成 PDF —— 完全免费，无需注册。`,
+      "rp.scope_label": `你想读哪一部分？`,
+      "rp.opt.whole": `整本圣经（1,189 章）`,
+      "rp.opt.nt": `新约（260 章）`,
+      "rp.opt.ot": `旧约（929 章）`,
+      "rp.opt.gospels": `四福音书 —— 马太福音到约翰福音（89 章）`,
+      "rp.opt.psalms": `诗篇与箴言（181 章）`,
+      "rp.duration_label": `计划时长`,
+      "rp.dur.year": `一年（365 次）`,
+      "rp.dur.6mo": `六个月（180 次）`,
+      "rp.dur.90": `90 天`,
+      "rp.dur.30": `30 天`,
+      "rp.dur.custom": `自定义…`,
+      "rp.custom_label": `阅读次数`,
+      "rp.custom_hint": `1 到 1500 之间。`,
+      "rp.start_label": `开始日期`,
+      "rp.rhythm_label": `阅读节奏`,
+      "rp.rhythm.every": `每天读`,
+      "rp.rhythm.six": `每周 6 天（周日休息 / 补进度）`,
+      "rp.submit": `生成我的计划`,
+      "rp.result_title": `你的读经计划`,
+      "rp.col.day": `第几天`,
+      "rp.col.date": `日期`,
+      "rp.col.reading": `读经内容`,
+      "rp.h.how": `这个读经计划生成器怎么用`,
+      "rp.p.how": `当你能在一页纸上看到整段旅程，读经就变得简单多了。这个免费工具会把你选择的圣经部分平均分配到你设定的天数里，再排成一份带日期的清单。每天打个勾，你就随时知道自己读到哪里、又走了多远。`,
+      "rp.li.portion": `<strong>选择范围。</strong>整本圣经、单独一约、四福音书，或诗篇与箴言这样的灵修节奏。`,
+      "rp.li.pace": `<strong>设定节奏。</strong>经典的一年通读、六个月、90 天、30 天，或适合你当下处境的任意长度。`,
+      "rp.li.rhythm": `<strong>选择节律。</strong>每天读，或每周读 6 天、周日留白用来休息或补进度 —— 这正是许多人落下进度、放弃读经最常见的原因。`,
+      "rp.li.print": `<strong>打印或存 PDF。</strong>夹在圣经里、贴在冰箱上，或复印几份给小组一起读。`,
+      "rp.h.tips": `坚持下去的几点建议`,
+      "rp.p.tips1": `大多数读经计划是在头几周被放弃的 —— 不是因为读的人失去了兴趣，而是漏读了几天、积压成了一座看似翻不过去的山。每周 6 天的节奏，就是特意留出的余地。万一落下了，别推倒重来 —— 从今天的日期接着读就好。一年的坚持，远比一月的完美记录更重要。`,
+      "rp.p.tips2": `和别人一起读也很有帮助。给小组、家人或几位朋友各印一份，彼此聊聊各自读到了什么。同一段经文，几个人一起读，几乎总能带出你独自会读漏的东西。`,
+      "rp.h.trans": `我该用哪个圣经译本？`,
+      "rp.p.trans": `这份计划按引用列出章节（例如 <em>约翰福音 1–3</em>），所以你手上任何译本、任何读经软件都能用。无论你读和合本、新译本，还是英文的 KJV、ESV，引用都是一样的，所以挑一本你最容易读懂、最乐意读的就好。`,
+      "rp.h.faq": `常见问题`,
+      "rp.faq.q1": `这个读经计划真的免费吗？`,
+      "rp.faq.a1": `是的。不收费、无需账号、也不用留邮箱。你可以生成任意多份，并逐一打印。`,
+      "rp.faq.q2": `计划会发到我邮箱或存到网上吗？`,
+      "rp.faq.a2": `不会。一切都在你的浏览器里生成，你输入的任何内容都不会上传或存到服务器。想保留，就打印，或用浏览器的"存为 PDF"。`,
+      "rp.faq.q3": `一年读完整本圣经，每天要读几章？`,
+      "rp.faq.a3": `圣经共有 1,189 章，所以 365 天的计划平均每天读三章多一点。每天具体读哪些，会显示在你生成的计划里。`,
+      "rp.faq.q4": `可以 90 天读完圣经吗？`,
+      "rp.faq.a4": `可以 —— 选择整本圣经，时长选 90 天。那大约是每天读十三章，节奏较快，很多人喜欢它带来的"全貌感"。如果觉得太多，六个月是更舒缓的选择。`,
+      "rp.faq.q5": `如果我漏了几天怎么办？`,
+      "rp.faq.a5": `别从头开始。从今天的日期继续读，并可以考虑用每周 6 天的节奏，好让周日用来补进度。晚一点读完，也仍然是读完了。`,
+      "scope.whole-bible": `整本圣经`,
+      "scope.new-testament": `新约`,
+      "scope.old-testament": `旧约`,
+      "scope.gospels": `四福音书`,
+      "scope.psalms-proverbs": `诗篇与箴言`,
+      "rhythm.every": `每天读`,
+      "rhythm.six": `每周 6 天（周日休息）`,
+      "summary.tpl": `{scope} · 共 {days} 次，每次约 {perDay} 章，{rhythm} · {start} 至 {end}`,
+      "err.scope": `请选择有效的读经范围。`,
+      "err.date": `请选择有效的开始日期。`,
+      "err.days_range": `天数必须在 1 到 1500 之间。`,
+      "err.no_chapters": `所选范围没有可安排的章节。`,
+      "err.too_many_days": `该范围只有 {chapters} 章，无法分成 {days} 次。请减少次数。`
+    }
+  };
+  </script>
+  <script src="../js/i18n.js"></script>
   <script src="js/app.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   <!-- Cloudflare Web Analytics -->
