@@ -18,16 +18,20 @@
     <div class="wrap">
       <a class="brand" href="../index.html"><span class="mark">✦</span> Faith Printables</a>
       <nav class="site-nav">
-        <a href="../index.html">All tools</a>
-        <a href="../about.html">About</a>
+        <a href="../index.html" data-i18n="nav.all_tools">All tools</a>
+        <a href="../about.html" data-i18n="nav.about">About</a>
+        <span class="lang-switch">
+          <button type="button" data-lang-btn="en">EN</button>
+          <button type="button" data-lang-btn="zh">中文</button>
+        </span>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
     <section class="hero">
-      <h1>Scripture Memory Card Maker</h1>
-      <p class="lede">Add the verses you want to learn and print them as clean, cut-out flashcards.
+      <h1 data-i18n="mc.title">Scripture Memory Card Maker</h1>
+      <p class="lede" data-i18n="mc.lede">Add the verses you want to learn and print them as clean, cut-out flashcards.
         Use plain cards for review, or fold-over cards with the reference on the front and the verse
         on the back to test yourself — free, and nothing to sign up for.</p>
     </section>
@@ -36,105 +40,105 @@
       <div class="error-box" data-error hidden></div>
 
       <div class="field">
-        <label>Your verses</label>
-        <p class="hint">Paste the verse text from whichever Bible translation you read. We never
+        <label data-i18n="mc.verses_label">Your verses</label>
+        <p class="hint" data-i18n="mc.verses_hint">Paste the verse text from whichever Bible translation you read. We never
           store what you type — cards are built right here in your browser.</p>
         <div data-verse-rows class="verse-rows"></div>
-        <button type="button" class="btn btn-ghost btn-add" data-add-verse>+ Add another verse</button>
+        <button type="button" class="btn btn-ghost btn-add" data-add-verse data-i18n="mc.add">+ Add another verse</button>
       </div>
 
       <div class="field-row">
         <div class="field">
-          <label for="cardType">Card style</label>
+          <label for="cardType" data-i18n="mc.style_label">Card style</label>
           <select id="cardType" name="cardType">
-            <option value="full">Full card — reference &amp; verse together</option>
-            <option value="fold">Fold-over — reference front, verse back</option>
+            <option value="full" data-i18n="mc.style.full">Full card — reference &amp; verse together</option>
+            <option value="fold" data-i18n="mc.style.fold">Fold-over — reference front, verse back</option>
           </select>
         </div>
         <div class="field">
-          <label for="size">Card size</label>
+          <label for="size" data-i18n="mc.size_label">Card size</label>
           <select id="size" name="size">
-            <option value="large">Large — 4 per page</option>
-            <option value="small">Small — 8 per page</option>
+            <option value="large" data-i18n="mc.size.large">Large — 4 per page</option>
+            <option value="small" data-i18n="mc.size.small">Small — 8 per page</option>
           </select>
         </div>
       </div>
 
       <div class="field">
-        <label for="translation">Translation label <span class="hint-inline">(optional)</span></label>
+        <label for="translation"><span data-i18n="mc.trans_label">Translation label</span> <span class="hint-inline" data-i18n="mc.optional">(optional)</span></label>
         <input type="text" id="translation" name="translation" value="KJV" maxlength="24"
-               placeholder="e.g. KJV, ESV, NIV">
-        <p class="hint">Printed small on each card. Leave blank to omit.</p>
+               data-i18n-ph="mc.trans_ph" placeholder="e.g. KJV, ESV, NIV">
+        <p class="hint" data-i18n="mc.trans_hint">Printed small on each card. Leave blank to omit.</p>
       </div>
 
-      <button type="submit" class="btn btn-primary">Make my cards</button>
+      <button type="submit" class="btn btn-primary" data-i18n="mc.submit">Make my cards</button>
     </form>
 
     <section class="result" data-result hidden>
       <div class="result-head">
-        <h2>Your memory cards</h2>
-        <button type="button" class="btn btn-ghost" data-print>🖨 Print / Save as PDF</button>
+        <h2 data-i18n="mc.result_title">Your memory cards</h2>
+        <button type="button" class="btn btn-ghost" data-print data-i18n="action.print">🖨 Print / Save as PDF</button>
       </div>
       <p class="summary" data-caption></p>
       <div class="cards-output" data-cards-output></div>
     </section>
 
     <section class="prose">
-      <h2>How to make Bible memory cards</h2>
-      <p>Hiding God's Word in your heart is easier with something you can hold. This free tool turns
+      <h2 data-i18n="mc.h.how">How to make Bible memory cards</h2>
+      <p data-i18n="mc.p.how">Hiding God's Word in your heart is easier with something you can hold. This free tool turns
         a list of verses into tidy, printable flashcards you can cut out and carry, tuck into a
         Bible, or hand around a small group or family.</p>
       <ul>
-        <li><strong>Add your verses.</strong> Type the reference and paste the verse text from the
+        <li data-i18n-html="mc.li.1"><strong>Add your verses.</strong> Type the reference and paste the verse text from the
           translation you love to read. Add as many as you like.</li>
-        <li><strong>Pick a style.</strong> <em>Full cards</em> show the reference and verse together
+        <li data-i18n-html="mc.li.2"><strong>Pick a style.</strong> <em>Full cards</em> show the reference and verse together
           — great for reviewing. <em>Fold-over cards</em> put the reference on the front and the
           verse on the back, so you can quiz yourself: read the reference, recall the verse, then
           check.</li>
-        <li><strong>Choose a size.</strong> Four larger cards per page, or eight smaller ones when
+        <li data-i18n-html="mc.li.3"><strong>Choose a size.</strong> Four larger cards per page, or eight smaller ones when
           you have a lot to memorize.</li>
-        <li><strong>Print and cut.</strong> Print at home, cut along the card borders, and you're
+        <li data-i18n-html="mc.li.4"><strong>Print and cut.</strong> Print at home, cut along the card borders, and you're
           done. Card stock holds up better than paper if you have it.</li>
       </ul>
 
-      <h2>Making fold-over cards</h2>
-      <p>For fold-over cards, print the page, cut out each card along its outer border, then fold
+      <h2 data-i18n="mc.h.fold">Making fold-over cards</h2>
+      <p data-i18n="mc.p.fold">For fold-over cards, print the page, cut out each card along its outer border, then fold
         along the dashed centre line so the reference and the verse end up back to back. A dab of
         glue keeps them together. Now you can flip through the reference side and practise recalling
         each verse — the classic way to memorize Scripture.</p>
 
-      <h2 id="translation-note">Which translation should I use?</h2>
-      <p>Any translation works — you provide the wording, so the cards match the Bible you actually
+      <h2 id="translation-note" data-i18n="mc.h.trans">Which translation should I use?</h2>
+      <p data-i18n="mc.p.trans">Any translation works — you provide the wording, so the cards match the Bible you actually
         read. Many people find they memorize most naturally in the version they hear at church.
         Whichever you choose, add its name in the translation label so you remember which wording
         you learned.</p>
 
       <div class="faq">
-        <h2>Frequently asked questions</h2>
+        <h2 data-i18n="mc.h.faq">Frequently asked questions</h2>
         <details>
-          <summary>Is this memory card maker free?</summary>
-          <p>Yes — completely free, with no account and no email needed. Make and print as many sets
+          <summary data-i18n="mc.faq.q1">Is this memory card maker free?</summary>
+          <p data-i18n="mc.faq.a1">Yes — completely free, with no account and no email needed. Make and print as many sets
             as you like.</p>
         </details>
         <details>
-          <summary>Do you store the verses I type?</summary>
-          <p>No. Everything happens in your browser. Nothing you type is uploaded or saved on a
+          <summary data-i18n="mc.faq.q2">Do you store the verses I type?</summary>
+          <p data-i18n="mc.faq.a2">No. Everything happens in your browser. Nothing you type is uploaded or saved on a
             server. To keep a set, print it or use your browser's "Save as PDF" option.</p>
         </details>
         <details>
-          <summary>What size are the cards?</summary>
-          <p>They're sized to fit a standard Letter or A4 page — four larger cards or eight smaller
+          <summary data-i18n="mc.faq.q3">What size are the cards?</summary>
+          <p data-i18n="mc.faq.a3">They're sized to fit a standard Letter or A4 page — four larger cards or eight smaller
             cards per sheet. Your printer's "fit to page" setting will keep them the right size.</p>
         </details>
         <details>
-          <summary>Can I make double-sided flashcards?</summary>
-          <p>Yes. Choose the fold-over style: the reference prints on the front and the verse on the
+          <summary data-i18n="mc.faq.q4">Can I make double-sided flashcards?</summary>
+          <p data-i18n="mc.faq.a4">Yes. Choose the fold-over style: the reference prints on the front and the verse on the
             back of the same card once you cut it out and fold along the centre line. No
             double-sided printer required.</p>
         </details>
         <details>
-          <summary>Can I use any Bible translation?</summary>
-          <p>Yes. Because you paste the verse text yourself, the cards use whatever translation you
+          <summary data-i18n="mc.faq.q5">Can I use any Bible translation?</summary>
+          <p data-i18n="mc.faq.a5">Yes. Because you paste the verse text yourself, the cards use whatever translation you
             prefer. Add the version name in the translation label to keep track of it.</p>
         </details>
       </div>
@@ -143,8 +147,8 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <span>© <span id="year">2026</span> Faith Printables · Free printable tools for your walk with God.</span>
-      <span><a href="../privacy.html">Privacy</a> · <a href="../about.html">About</a></span>
+      <span>© <span id="year">2026</span> <span data-i18n="footer.copy_suffix">Faith Printables · Free printable tools for your walk with God.</span></span>
+      <span><a href="../privacy.html" data-i18n="footer.privacy">Privacy</a> · <a href="../about.html" data-i18n="footer.about">About</a></span>
     </div>
   </footer>
 
@@ -162,8 +166,115 @@
     "publisher": { "@type": "Organization", "name": "Faith Printables", "url": "https://faithprintables.com/" }
   }
   </script>
+
   <script src="js/samples.js"></script>
   <script src="js/cards.js"></script>
+  <script src="../js/i18n-common.js"></script>
+  <script>
+  window.I18N_PAGE = {
+    en: {
+      "mc.title": `Scripture Memory Card Maker`,
+      "mc.lede": `Add the verses you want to learn and print them as clean, cut-out flashcards. Use plain cards for review, or fold-over cards with the reference on the front and the verse on the back to test yourself — free, and nothing to sign up for.`,
+      "mc.verses_label": `Your verses`,
+      "mc.verses_hint": `Paste the verse text from whichever Bible translation you read. We never store what you type — cards are built right here in your browser.`,
+      "mc.add": `+ Add another verse`,
+      "mc.ph.ref": `Reference (e.g. John 3:16)`,
+      "mc.ph.text": `Verse text — paste from your Bible or app`,
+      "mc.aria.ref": `Verse reference`,
+      "mc.aria.text": `Verse text`,
+      "mc.aria.remove": `Remove this verse`,
+      "mc.style_label": `Card style`,
+      "mc.style.full": `Full card — reference & verse together`,
+      "mc.style.fold": `Fold-over — reference front, verse back`,
+      "mc.size_label": `Card size`,
+      "mc.size.large": `Large — 4 per page`,
+      "mc.size.small": `Small — 8 per page`,
+      "mc.trans_label": `Translation label`,
+      "mc.optional": `(optional)`,
+      "mc.trans_ph": `e.g. KJV, ESV, NIV`,
+      "mc.trans_hint": `Printed small on each card. Leave blank to omit.`,
+      "mc.submit": `Make my cards`,
+      "mc.result_title": `Your memory cards`,
+      "mc.type.full": `full`,
+      "mc.type.fold": `fold-over`,
+      "mc.caption": `{count} {type} card(s) across {pages} page(s). Print, then cut along the card borders.`,
+      "mc.err.empty": `Add at least one verse (a reference or some text) to make cards.`,
+      "mc.err.fold_missing": `Fold-over cards need both a reference and verse text for every card (the reference goes on the front, the text on the back).`,
+      "mc.h.how": `How to make Bible memory cards`,
+      "mc.p.how": `Hiding God's Word in your heart is easier with something you can hold. This free tool turns a list of verses into tidy, printable flashcards you can cut out and carry, tuck into a Bible, or hand around a small group or family.`,
+      "mc.li.1": `<strong>Add your verses.</strong> Type the reference and paste the verse text from the translation you love to read. Add as many as you like.`,
+      "mc.li.2": `<strong>Pick a style.</strong> <em>Full cards</em> show the reference and verse together — great for reviewing. <em>Fold-over cards</em> put the reference on the front and the verse on the back, so you can quiz yourself: read the reference, recall the verse, then check.`,
+      "mc.li.3": `<strong>Choose a size.</strong> Four larger cards per page, or eight smaller ones when you have a lot to memorize.`,
+      "mc.li.4": `<strong>Print and cut.</strong> Print at home, cut along the card borders, and you're done. Card stock holds up better than paper if you have it.`,
+      "mc.h.fold": `Making fold-over cards`,
+      "mc.p.fold": `For fold-over cards, print the page, cut out each card along its outer border, then fold along the dashed centre line so the reference and the verse end up back to back. A dab of glue keeps them together. Now you can flip through the reference side and practise recalling each verse — the classic way to memorize Scripture.`,
+      "mc.h.trans": `Which translation should I use?`,
+      "mc.p.trans": `Any translation works — you provide the wording, so the cards match the Bible you actually read. Many people find they memorize most naturally in the version they hear at church. Whichever you choose, add its name in the translation label so you remember which wording you learned.`,
+      "mc.h.faq": `Frequently asked questions`,
+      "mc.faq.q1": `Is this memory card maker free?`,
+      "mc.faq.a1": `Yes — completely free, with no account and no email needed. Make and print as many sets as you like.`,
+      "mc.faq.q2": `Do you store the verses I type?`,
+      "mc.faq.a2": `No. Everything happens in your browser. Nothing you type is uploaded or saved on a server. To keep a set, print it or use your browser's "Save as PDF" option.`,
+      "mc.faq.q3": `What size are the cards?`,
+      "mc.faq.a3": `They're sized to fit a standard Letter or A4 page — four larger cards or eight smaller cards per sheet. Your printer's "fit to page" setting will keep them the right size.`,
+      "mc.faq.q4": `Can I make double-sided flashcards?`,
+      "mc.faq.a4": `Yes. Choose the fold-over style: the reference prints on the front and the verse on the back of the same card once you cut it out and fold along the centre line. No double-sided printer required.`,
+      "mc.faq.q5": `Can I use any Bible translation?`,
+      "mc.faq.a5": `Yes. Because you paste the verse text yourself, the cards use whatever translation you prefer. Add the version name in the translation label to keep track of it.`
+    },
+    zh: {
+      "mc.title": `经文记忆卡制作器`,
+      "mc.lede": `把你想背的经文加进来，打印成一张张干净、可裁剪的卡片。用普通卡片复习，或用正反面对折卡自测 —— 完全免费，无需注册。`,
+      "mc.verses_label": `你的经文`,
+      "mc.verses_hint": `从你读的任何圣经译本里把经文正文粘贴进来。我们绝不保存你输入的内容 —— 卡片就在你的浏览器里生成。`,
+      "mc.add": `+ 再加一节`,
+      "mc.ph.ref": `引用（例如 约翰福音 3:16）`,
+      "mc.ph.text": `经文正文 —— 从你的圣经或读经软件里粘贴`,
+      "mc.aria.ref": `经文引用`,
+      "mc.aria.text": `经文正文`,
+      "mc.aria.remove": `删除这一节`,
+      "mc.style_label": `卡片样式`,
+      "mc.style.full": `整面卡 —— 引用与经文在同一面`,
+      "mc.style.fold": `对折卡 —— 引用在正面，经文在背面`,
+      "mc.size_label": `卡片尺寸`,
+      "mc.size.large": `大 —— 每页 4 张`,
+      "mc.size.small": `小 —— 每页 8 张`,
+      "mc.trans_label": `译本标注`,
+      "mc.optional": `（可选）`,
+      "mc.trans_ph": `例如 和合本、KJV、ESV`,
+      "mc.trans_hint": `会小字印在每张卡片上。留空则不显示。`,
+      "mc.submit": `制作我的卡片`,
+      "mc.result_title": `你的记忆卡`,
+      "mc.type.full": `整面`,
+      "mc.type.fold": `对折`,
+      "mc.caption": `共 {count} 张{type}卡片，{pages} 页可打印。打印后沿卡片边框裁开。`,
+      "mc.err.empty": `请至少加入一节经文（引用或正文）才能制作卡片。`,
+      "mc.err.fold_missing": `对折卡的每一张都需要引用和经文正文（引用印在正面，正文印在背面）。`,
+      "mc.h.how": `怎么制作圣经记忆卡`,
+      "mc.p.how": `把神的话藏在心里，有一张能拿在手上的卡片会容易得多。这个免费工具会把一串经文变成整齐、可打印的卡片，你可以裁下来随身带、夹进圣经，或在小组和家里分发。`,
+      "mc.li.1": `<strong>加入经文。</strong>输入引用，并从你喜欢读的译本里粘贴经文正文。想加多少节都行。`,
+      "mc.li.2": `<strong>选择样式。</strong><em>整面卡</em>把引用和经文印在一起 —— 适合复习。<em>对折卡</em>把引用放正面、经文放背面，方便自测：看引用、回忆经文、再翻过来对照。`,
+      "mc.li.3": `<strong>选择尺寸。</strong>每页四张大卡，或要背的多时每页八张小卡。`,
+      "mc.li.4": `<strong>打印并裁剪。</strong>在家打印，沿卡片边框裁开就好。有卡纸的话，比普通纸更耐用。`,
+      "mc.h.fold": `关于对折卡`,
+      "mc.p.fold": `做对折卡时，先打印整页，沿每张卡片的外框裁下，再沿中间的虚线对折，让引用和经文正好正反相对。抹一点胶把它们粘住，就能一面翻引用、另一面回忆经文 —— 这是背经的经典方式。`,
+      "mc.h.trans": `我该用哪个译本？`,
+      "mc.p.trans": `任何译本都行 —— 经文正文是你自己提供的，所以卡片和你实际读的圣经一致。很多人发现，用教会里常听到的那个版本最容易背下来。无论选哪个，把它的名字填进译本标注里，好记住你背的是哪个版本。`,
+      "mc.h.faq": `常见问题`,
+      "mc.faq.q1": `这个记忆卡制作器免费吗？`,
+      "mc.faq.a1": `是的 —— 完全免费，无需账号、也不用邮箱。想做多少套、打印多少张都可以。`,
+      "mc.faq.q2": `你会保存我输入的经文吗？`,
+      "mc.faq.a2": `不会。一切都在你的浏览器里完成，你输入的内容不会上传、也不会存到服务器。想保留就打印，或用浏览器的"存为 PDF"。`,
+      "mc.faq.q3": `卡片是多大尺寸？`,
+      "mc.faq.a3": `按标准的 Letter 或 A4 纸排版 —— 每页四张大卡或八张小卡。用打印机的"适应页面"设置就能保持正确大小。`,
+      "mc.faq.q4": `可以做双面闪卡吗？`,
+      "mc.faq.a4": `可以。选对折卡样式：裁下、沿中线对折后，引用在正面、经文在背面 —— 不需要双面打印机。`,
+      "mc.faq.q5": `可以用任何圣经译本吗？`,
+      "mc.faq.a5": `可以。因为经文正文是你自己粘贴的，卡片会用你偏好的译本。把版本名填进译本标注里即可。`
+    }
+  };
+  </script>
+  <script src="../js/i18n.js"></script>
   <script src="js/app.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   <!-- Cloudflare Web Analytics -->

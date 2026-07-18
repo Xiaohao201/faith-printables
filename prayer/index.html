@@ -18,16 +18,20 @@
     <div class="wrap">
       <a class="brand" href="../index.html"><span class="mark">✦</span> Faith Printables</a>
       <nav class="site-nav">
-        <a href="../index.html">All tools</a>
-        <a href="../about.html">About</a>
+        <a href="../index.html" data-i18n="nav.all_tools">All tools</a>
+        <a href="../about.html" data-i18n="nav.about">About</a>
+        <span class="lang-switch">
+          <button type="button" data-lang-btn="en">EN</button>
+          <button type="button" data-lang-btn="zh">中文</button>
+        </span>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
     <section class="hero">
-      <h1>Prayer List &amp; Journal Maker</h1>
-      <p class="lede">Build a printable prayer sheet that fits how you pray — a weekly focus for each
+      <h1 data-i18n="pr.title_h">Prayer List &amp; Journal Maker</h1>
+      <p class="lede" data-i18n="pr.lede">Build a printable prayer sheet that fits how you pray — a weekly focus for each
         day, a request tracker with a column for answered prayers, or a simple journal page. Free,
         and nothing to sign up for.</p>
     </section>
@@ -37,97 +41,97 @@
 
       <div class="field-row">
         <div class="field">
-          <label for="template">Layout</label>
+          <label for="template" data-i18n="pr.layout_label">Layout</label>
           <select id="template" name="template" data-template>
-            <option value="weekly">Weekly prayer focus — a theme for each day</option>
-            <option value="tracker">Request tracker — date, request, answered</option>
-            <option value="journal">Journal page — praise, requests, answered, verse</option>
+            <option value="weekly" data-i18n="pr.layout.weekly">Weekly prayer focus — a theme for each day</option>
+            <option value="tracker" data-i18n="pr.layout.tracker">Request tracker — date, request, answered</option>
+            <option value="journal" data-i18n="pr.layout.journal">Journal page — praise, requests, answered, verse</option>
           </select>
         </div>
         <div class="field">
-          <label for="title">Title <span class="hint-inline">(optional)</span></label>
-          <input type="text" id="title" name="title" maxlength="60" placeholder="Leave blank for a default">
+          <label for="title"><span data-i18n="pr.title_label">Title</span> <span class="hint-inline" data-i18n="pr.optional">(optional)</span></label>
+          <input type="text" id="title" name="title" maxlength="60" data-i18n-ph="pr.title_ph" placeholder="Leave blank for a default">
         </div>
       </div>
 
       <div class="field" data-group="weekly">
-        <label>Focus for each day <span class="hint-inline">(edit to fit your prayers)</span></label>
+        <label><span data-i18n="pr.focus_label">Focus for each day</span> <span class="hint-inline" data-i18n="pr.focus_hint">(edit to fit your prayers)</span></label>
         <div class="focus-grid">
-          <label class="focus-cell"><span>Monday</span><input type="text" data-focus maxlength="40" value="Family"></label>
-          <label class="focus-cell"><span>Tuesday</span><input type="text" data-focus maxlength="40" value="My Church"></label>
-          <label class="focus-cell"><span>Wednesday</span><input type="text" data-focus maxlength="40" value="Missions & the Persecuted"></label>
-          <label class="focus-cell"><span>Thursday</span><input type="text" data-focus maxlength="40" value="Our Nation & Leaders"></label>
-          <label class="focus-cell"><span>Friday</span><input type="text" data-focus maxlength="40" value="Friends & Neighbours"></label>
-          <label class="focus-cell"><span>Saturday</span><input type="text" data-focus maxlength="40" value="The Lost"></label>
-          <label class="focus-cell"><span>Sunday</span><input type="text" data-focus maxlength="40" value="Praise & Thanksgiving"></label>
+          <label class="focus-cell"><span data-i18n="pr.day.0">Monday</span><input type="text" data-focus maxlength="40" value="Family"></label>
+          <label class="focus-cell"><span data-i18n="pr.day.1">Tuesday</span><input type="text" data-focus maxlength="40" value="My Church"></label>
+          <label class="focus-cell"><span data-i18n="pr.day.2">Wednesday</span><input type="text" data-focus maxlength="40" value="Missions & the Persecuted"></label>
+          <label class="focus-cell"><span data-i18n="pr.day.3">Thursday</span><input type="text" data-focus maxlength="40" value="Our Nation & Leaders"></label>
+          <label class="focus-cell"><span data-i18n="pr.day.4">Friday</span><input type="text" data-focus maxlength="40" value="Friends & Neighbours"></label>
+          <label class="focus-cell"><span data-i18n="pr.day.5">Saturday</span><input type="text" data-focus maxlength="40" value="The Lost"></label>
+          <label class="focus-cell"><span data-i18n="pr.day.6">Sunday</span><input type="text" data-focus maxlength="40" value="Praise & Thanksgiving"></label>
         </div>
       </div>
 
       <div class="field" data-group="tracker" hidden>
-        <label for="rows">Number of rows</label>
+        <label for="rows" data-i18n="pr.rows_label">Number of rows</label>
         <input type="number" id="rows" name="rows" data-rows min="1" max="40" step="1" value="12">
-        <p class="hint">Each row has space for a date, a request, and when it was answered.</p>
+        <p class="hint" data-i18n="pr.rows_hint">Each row has space for a date, a request, and when it was answered.</p>
       </div>
 
       <div class="field">
         <label class="check-label">
           <input type="checkbox" name="showHeader" checked>
-          Include a Name / Date header
+          <span data-i18n="pr.header_check">Include a Name / Date header</span>
         </label>
       </div>
 
-      <button type="submit" class="btn btn-primary">Make my prayer sheet</button>
+      <button type="submit" class="btn btn-primary" data-i18n="pr.submit">Make my prayer sheet</button>
     </form>
 
     <section class="result" data-result hidden>
       <div class="result-head">
-        <h2>Your prayer sheet</h2>
-        <button type="button" class="btn btn-ghost" data-print>🖨 Print / Save as PDF</button>
+        <h2 data-i18n="pr.result_title">Your prayer sheet</h2>
+        <button type="button" class="btn btn-ghost" data-print data-i18n="action.print">🖨 Print / Save as PDF</button>
       </div>
       <div class="prayer-output" data-prayer-output></div>
     </section>
 
     <section class="prose">
-      <h2>How to make a prayer list you'll actually use</h2>
-      <p>A written prayer list turns good intentions into a habit. Instead of trying to remember
+      <h2 data-i18n="pr.h.how">How to make a prayer list you'll actually use</h2>
+      <p data-i18n="pr.p.how">A written prayer list turns good intentions into a habit. Instead of trying to remember
         everything at once, you can pray through one page at a time — and look back to see how God
         has answered. This free tool builds three of the most useful formats, ready to print.</p>
       <ul>
-        <li><strong>Weekly prayer focus.</strong> Give each day of the week a theme — family,
+        <li data-i18n-html="pr.li.1"><strong>Weekly prayer focus.</strong> Give each day of the week a theme — family,
           church, missions, your nation, the lost — so that over a week you cover far more than you
           could in a single sitting. Edit the themes to fit your own life.</li>
-        <li><strong>Request tracker.</strong> A simple table with a date, the request, and a column
+        <li data-i18n-html="pr.li.2"><strong>Request tracker.</strong> A simple table with a date, the request, and a column
           for when it was answered. Watching that last column fill in is a quiet, steady
           encouragement.</li>
-        <li><strong>Journal page.</strong> Room for praise and thanksgiving, requests, answered
+        <li data-i18n-html="pr.li.3"><strong>Journal page.</strong> Room for praise and thanksgiving, requests, answered
           prayers, and a verse for the day — a gentle structure for unhurried time with God.</li>
       </ul>
 
-      <h2>Ideas for using your prayer sheet</h2>
-      <p>Keep a weekly focus in the front of your Bible, print a tracker for a small group to pray
+      <h2 data-i18n="pr.h.ideas">Ideas for using your prayer sheet</h2>
+      <p data-i18n="pr.p.ideas">Keep a weekly focus in the front of your Bible, print a tracker for a small group to pray
         through together, or give family members their own journal page. Because you set the title
         and the daily themes, the sheet reflects the people and needs God has placed on your heart.</p>
 
       <div class="faq">
-        <h2>Frequently asked questions</h2>
+        <h2 data-i18n="pr.h.faq">Frequently asked questions</h2>
         <details>
-          <summary>Is this prayer list maker free?</summary>
-          <p>Yes — free, with no account and no email. Make and print as many sheets as you like.</p>
+          <summary data-i18n="pr.faq.q1">Is this prayer list maker free?</summary>
+          <p data-i18n="pr.faq.a1">Yes — free, with no account and no email. Make and print as many sheets as you like.</p>
         </details>
         <details>
-          <summary>Do you store what I type?</summary>
-          <p>No. The sheet is built in your browser, and nothing you type is uploaded or saved. To
+          <summary data-i18n="pr.faq.q2">Do you store what I type?</summary>
+          <p data-i18n="pr.faq.a2">No. The sheet is built in your browser, and nothing you type is uploaded or saved. To
             keep it, print it or use your browser's "Save as PDF" option.</p>
         </details>
         <details>
-          <summary>What's the difference between the three layouts?</summary>
-          <p>The weekly focus gives each day a theme with a little space to write. The tracker is a
+          <summary data-i18n="pr.faq.q3">What's the difference between the three layouts?</summary>
+          <p data-i18n="pr.faq.a3">The weekly focus gives each day a theme with a little space to write. The tracker is a
             table for logging requests and when they're answered. The journal page has labelled
             sections with lines for a fuller quiet time.</p>
         </details>
         <details>
-          <summary>Can I use it for a small group or family?</summary>
-          <p>Yes. Print one copy and photocopy a set, or print a fresh sheet for each person. The
+          <summary data-i18n="pr.faq.q4">Can I use it for a small group or family?</summary>
+          <p data-i18n="pr.faq.a4">Yes. Print one copy and photocopy a set, or print a fresh sheet for each person. The
             weekly focus works especially well for praying together.</p>
         </details>
       </div>
@@ -136,8 +140,8 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <span>© <span id="year">2026</span> Faith Printables · Free printable tools for your walk with God.</span>
-      <span><a href="../privacy.html">Privacy</a> · <a href="../about.html">About</a></span>
+      <span>© <span id="year">2026</span> <span data-i18n="footer.copy_suffix">Faith Printables · Free printable tools for your walk with God.</span></span>
+      <span><a href="../privacy.html" data-i18n="footer.privacy">Privacy</a> · <a href="../about.html" data-i18n="footer.about">About</a></span>
     </div>
   </footer>
 
@@ -155,7 +159,134 @@
     "publisher": { "@type": "Organization", "name": "Faith Printables", "url": "https://faithprintables.com/" }
   }
   </script>
+
   <script src="js/prayer.js"></script>
+  <script src="../js/i18n-common.js"></script>
+  <script>
+  window.I18N_PAGE = {
+    en: {
+      "pr.title_h": `Prayer List & Journal Maker`,
+      "pr.lede": `Build a printable prayer sheet that fits how you pray — a weekly focus for each day, a request tracker with a column for answered prayers, or a simple journal page. Free, and nothing to sign up for.`,
+      "pr.layout_label": `Layout`,
+      "pr.layout.weekly": `Weekly prayer focus — a theme for each day`,
+      "pr.layout.tracker": `Request tracker — date, request, answered`,
+      "pr.layout.journal": `Journal page — praise, requests, answered, verse`,
+      "pr.title_label": `Title`,
+      "pr.optional": `(optional)`,
+      "pr.title_ph": `Leave blank for a default`,
+      "pr.focus_label": `Focus for each day`,
+      "pr.focus_hint": `(edit to fit your prayers)`,
+      "pr.day.0": `Monday`,
+      "pr.day.1": `Tuesday`,
+      "pr.day.2": `Wednesday`,
+      "pr.day.3": `Thursday`,
+      "pr.day.4": `Friday`,
+      "pr.day.5": `Saturday`,
+      "pr.day.6": `Sunday`,
+      "pr.focus.0": `Family`,
+      "pr.focus.1": `My Church`,
+      "pr.focus.2": `Missions & the Persecuted`,
+      "pr.focus.3": `Our Nation & Leaders`,
+      "pr.focus.4": `Friends & Neighbours`,
+      "pr.focus.5": `The Lost`,
+      "pr.focus.6": `Praise & Thanksgiving`,
+      "pr.rows_label": `Number of rows`,
+      "pr.rows_hint": `Each row has space for a date, a request, and when it was answered.`,
+      "pr.header_check": `Include a Name / Date header`,
+      "pr.submit": `Make my prayer sheet`,
+      "pr.result_title": `Your prayer sheet`,
+      "pr.col.date": `Date`,
+      "pr.col.request": `Prayer Request`,
+      "pr.col.answered": `Answered`,
+      "pr.section.0": `Praise & Thanksgiving`,
+      "pr.section.1": `Prayer Requests`,
+      "pr.section.2": `Answered Prayers`,
+      "pr.section.3": `A Verse for Today`,
+      "pr.name": `Name: ____________________`,
+      "pr.date": `Date: ____________`,
+      "pr.title.default.weekly": `Weekly Prayer Focus`,
+      "pr.title.default.tracker": `Prayer Requests`,
+      "pr.title.default.journal": `Prayer Journal`,
+      "pr.h.how": `How to make a prayer list you'll actually use`,
+      "pr.p.how": `A written prayer list turns good intentions into a habit. Instead of trying to remember everything at once, you can pray through one page at a time — and look back to see how God has answered. This free tool builds three of the most useful formats, ready to print.`,
+      "pr.li.1": `<strong>Weekly prayer focus.</strong> Give each day of the week a theme — family, church, missions, your nation, the lost — so that over a week you cover far more than you could in a single sitting. Edit the themes to fit your own life.`,
+      "pr.li.2": `<strong>Request tracker.</strong> A simple table with a date, the request, and a column for when it was answered. Watching that last column fill in is a quiet, steady encouragement.`,
+      "pr.li.3": `<strong>Journal page.</strong> Room for praise and thanksgiving, requests, answered prayers, and a verse for the day — a gentle structure for unhurried time with God.`,
+      "pr.h.ideas": `Ideas for using your prayer sheet`,
+      "pr.p.ideas": `Keep a weekly focus in the front of your Bible, print a tracker for a small group to pray through together, or give family members their own journal page. Because you set the title and the daily themes, the sheet reflects the people and needs God has placed on your heart.`,
+      "pr.h.faq": `Frequently asked questions`,
+      "pr.faq.q1": `Is this prayer list maker free?`,
+      "pr.faq.a1": `Yes — free, with no account and no email. Make and print as many sheets as you like.`,
+      "pr.faq.q2": `Do you store what I type?`,
+      "pr.faq.a2": `No. The sheet is built in your browser, and nothing you type is uploaded or saved. To keep it, print it or use your browser's "Save as PDF" option.`,
+      "pr.faq.q3": `What's the difference between the three layouts?`,
+      "pr.faq.a3": `The weekly focus gives each day a theme with a little space to write. The tracker is a table for logging requests and when they're answered. The journal page has labelled sections with lines for a fuller quiet time.`,
+      "pr.faq.q4": `Can I use it for a small group or family?`,
+      "pr.faq.a4": `Yes. Print one copy and photocopy a set, or print a fresh sheet for each person. The weekly focus works especially well for praying together.`
+    },
+    zh: {
+      "pr.title_h": `祷告清单与日志生成器`,
+      "pr.lede": `做一份贴合你祷告方式的可打印祷告表 —— 每天一个主题的周祷表、带"应允"栏的祷告事项追踪表，或一页简单的祷告日志。免费，无需注册。`,
+      "pr.layout_label": `版式`,
+      "pr.layout.weekly": `每周祷告主题 —— 每天一个主题`,
+      "pr.layout.tracker": `事项追踪表 —— 日期、事项、应允`,
+      "pr.layout.journal": `日志页 —— 感恩、祈求、应允、经文`,
+      "pr.title_label": `标题`,
+      "pr.optional": `（可选）`,
+      "pr.title_ph": `留空则用默认标题`,
+      "pr.focus_label": `每天的主题`,
+      "pr.focus_hint": `（可自行修改，贴合你的祷告）`,
+      "pr.day.0": `星期一`,
+      "pr.day.1": `星期二`,
+      "pr.day.2": `星期三`,
+      "pr.day.3": `星期四`,
+      "pr.day.4": `星期五`,
+      "pr.day.5": `星期六`,
+      "pr.day.6": `星期日`,
+      "pr.focus.0": `家人`,
+      "pr.focus.1": `我的教会`,
+      "pr.focus.2": `宣教与受逼迫的肢体`,
+      "pr.focus.3": `国家与掌权者`,
+      "pr.focus.4": `朋友与邻舍`,
+      "pr.focus.5": `尚未信主的人`,
+      "pr.focus.6": `赞美与感恩`,
+      "pr.rows_label": `行数`,
+      "pr.rows_hint": `每行都留有位置写日期、祷告事项，以及何时蒙应允。`,
+      "pr.header_check": `包含 姓名 / 日期 表头`,
+      "pr.submit": `生成我的祷告表`,
+      "pr.result_title": `你的祷告表`,
+      "pr.col.date": `日期`,
+      "pr.col.request": `祷告事项`,
+      "pr.col.answered": `已应允`,
+      "pr.section.0": `赞美与感恩`,
+      "pr.section.1": `祷告事项`,
+      "pr.section.2": `已蒙应允的祷告`,
+      "pr.section.3": `今日经文`,
+      "pr.name": `姓名：____________________`,
+      "pr.date": `日期：____________`,
+      "pr.title.default.weekly": `每周祷告主题`,
+      "pr.title.default.tracker": `祷告事项`,
+      "pr.title.default.journal": `祷告日志`,
+      "pr.h.how": `怎么做一份你真会用的祷告清单`,
+      "pr.p.how": `写下来的祷告清单，能把好的心意变成习惯。你不必一次记住所有事，而是一页一页地祷告 —— 还能回头看见神如何应允。这个免费工具能生成三种最实用的版式，随时可打印。`,
+      "pr.li.1": `<strong>每周祷告主题。</strong>给一周的每一天定一个主题 —— 家人、教会、宣教、国家、未信之人 —— 这样一周下来，你所涵盖的远比一次坐下来能顾及的多。主题可按你自己的生活自由修改。`,
+      "pr.li.2": `<strong>事项追踪表。</strong>一张简单的表格，记下日期、事项，以及何时蒙应允。看着最后那一栏渐渐填满，是一种安静而持久的鼓励。`,
+      "pr.li.3": `<strong>日志页。</strong>留有赞美感恩、祈求、蒙应允的祷告，以及一节今日经文的空间 —— 一个温和的框架，陪你从容地亲近神。`,
+      "pr.h.ideas": `祷告表的用法建议`,
+      "pr.p.ideas": `把每周祷告主题夹在圣经扉页；印一张追踪表给小组一起祷告；或给家里每个人各一页日志。因为标题和每日主题都由你设定，这张表会映照出神放在你心上的那些人和需要。`,
+      "pr.h.faq": `常见问题`,
+      "pr.faq.q1": `这个祷告清单工具免费吗？`,
+      "pr.faq.a1": `是的 —— 免费，无需账号、也不用邮箱。想做多少张、打印多少张都可以。`,
+      "pr.faq.q2": `你会保存我输入的内容吗？`,
+      "pr.faq.a2": `不会。祷告表在你的浏览器里生成，你输入的内容不会上传或保存。想保留就打印，或用浏览器的"存为 PDF"。`,
+      "pr.faq.q3": `三种版式有什么区别？`,
+      "pr.faq.a3": `每周主题给每天一个主题并留少许书写空间。追踪表是记录事项和何时应允的表格。日志页有带格线的分区，适合更完整的灵修时光。`,
+      "pr.faq.q4": `可以给小组或家庭用吗？`,
+      "pr.faq.a4": `可以。打印一张再复印一套，或给每个人各打印一张。每周祷告主题尤其适合一起祷告。`
+    }
+  };
+  </script>
+  <script src="../js/i18n.js"></script>
   <script src="js/app.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   <!-- Cloudflare Web Analytics -->

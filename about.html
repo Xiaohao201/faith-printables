@@ -14,36 +14,63 @@
     <div class="wrap">
       <a class="brand" href="index.html"><span class="mark">✦</span> Faith Printables</a>
       <nav class="site-nav">
-        <a href="index.html">All tools</a>
-        <a href="about.html">About</a>
+        <a href="index.html" data-i18n="nav.all_tools">All tools</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <span class="lang-switch">
+          <button type="button" data-lang-btn="en">EN</button>
+          <button type="button" data-lang-btn="zh">中文</button>
+        </span>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
     <section class="prose" style="margin-top:40px">
-      <h1>About Faith Printables</h1>
-      <p>Faith Printables is a small collection of free tools that generate clean, printable
+      <h1 data-i18n="about.title">About Faith Printables</h1>
+      <p data-i18n="about.p1">Faith Printables is a small collection of free tools that generate clean, printable
         resources for everyday Christian life — reading plans, memory cards, prayer templates, and
         materials for teaching children.</p>
-      <p>The idea is simple: make something genuinely useful and give it away. Every tool runs
+      <p data-i18n="about.p2">The idea is simple: make something genuinely useful and give it away. Every tool runs
         entirely in your browser. You don't create an account, and nothing you type is sent to or
         stored on a server. When you're done, you print the result or save it as a PDF.</p>
-      <p>The site is kept running with the help of a few unobtrusive ads. That support lets these
+      <p data-i18n="about.p3">The site is kept running with the help of a few unobtrusive ads. That support lets these
         tools stay free for everyone. If a tool has been helpful to you, sharing it with a friend or
         your church is the kindest thanks we could ask for.</p>
-      <h2>Get in touch</h2>
-      <p>Suggestions for new printables, or spotted something that could work better? We'd love to
+      <h2 data-i18n="about.h.contact">Get in touch</h2>
+      <p data-i18n-html="about.p.contact">Suggestions for new printables, or spotted something that could work better? We'd love to
         hear it — write to <a href="mailto:xuhaowei2019@gmail.com">xuhaowei2019@gmail.com</a>.</p>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <span>© <span id="year">2026</span> Faith Printables · Free printable tools for your walk with God.</span>
-      <span><a href="privacy.html">Privacy</a> · <a href="about.html">About</a></span>
+      <span>© <span id="year">2026</span> <span data-i18n="footer.copy_suffix">Faith Printables · Free printable tools for your walk with God.</span></span>
+      <span><a href="privacy.html" data-i18n="footer.privacy">Privacy</a> · <a href="about.html" data-i18n="footer.about">About</a></span>
     </div>
   </footer>
+
+  <script src="js/i18n-common.js"></script>
+  <script>
+  window.I18N_PAGE = {
+    en: {
+      "about.title": `About Faith Printables`,
+      "about.p1": `Faith Printables is a small collection of free tools that generate clean, printable resources for everyday Christian life — reading plans, memory cards, prayer templates, and materials for teaching children.`,
+      "about.p2": `The idea is simple: make something genuinely useful and give it away. Every tool runs entirely in your browser. You don't create an account, and nothing you type is sent to or stored on a server. When you're done, you print the result or save it as a PDF.`,
+      "about.p3": `The site is kept running with the help of a few unobtrusive ads. That support lets these tools stay free for everyone. If a tool has been helpful to you, sharing it with a friend or your church is the kindest thanks we could ask for.`,
+      "about.h.contact": `Get in touch`,
+      "about.p.contact": `Suggestions for new printables, or spotted something that could work better? We'd love to hear it — write to <a href="mailto:xuhaowei2019@gmail.com">xuhaowei2019@gmail.com</a>.`
+    },
+    zh: {
+      "about.title": `关于 Faith Printables`,
+      "about.p1": `Faith Printables 是一小组免费工具，为日常的基督徒生活生成干净、可打印的资源 —— 读经计划、记忆卡、祷告模板，以及教导孩子的材料。`,
+      "about.p2": `想法很简单：做一件真正有用的东西，然后免费送出去。每个工具都完全在你的浏览器里运行。你不需要注册账号，输入的任何内容也不会被发送或存到服务器。用完之后，你把结果打印出来，或存成 PDF。`,
+      "about.p3": `这个网站靠几处不打扰人的广告维持运转。正是这份支持，让这些工具对所有人保持免费。如果某个工具帮到了你，把它分享给朋友或你的教会，就是我们所能收到的最好的感谢。`,
+      "about.h.contact": `联系我们`,
+      "about.p.contact": `对新的可打印工具有建议，或发现哪里可以做得更好？我们很想听 —— 来信 <a href="mailto:xuhaowei2019@gmail.com">xuhaowei2019@gmail.com</a>。`
+    }
+  };
+  </script>
+  <script src="js/i18n.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   <!-- Cloudflare Web Analytics -->
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "88510c50ba01492f864a6d309e3aa100"}'></script>

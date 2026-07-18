@@ -15,67 +15,120 @@
     <div class="wrap">
       <a class="brand" href="index.html"><span class="mark">✦</span> Faith Printables</a>
       <nav class="site-nav">
-        <a href="index.html">All tools</a>
-        <a href="about.html">About</a>
+        <a href="index.html" data-i18n="nav.all_tools">All tools</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <span class="lang-switch">
+          <button type="button" data-lang-btn="en">EN</button>
+          <button type="button" data-lang-btn="zh">中文</button>
+        </span>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
     <section class="prose" style="margin-top:40px">
-      <h1>Privacy Policy</h1>
-      <p><em>Last updated: 2026.</em></p>
+      <h1 data-i18n="priv.title">Privacy Policy</h1>
+      <p data-i18n-html="priv.updated"><em>Last updated: 2026.</em></p>
 
-      <p>This policy explains what information Faith Printables ("we", "us") collects and how it is
+      <p data-i18n="priv.intro">This policy explains what information Faith Printables ("we", "us") collects and how it is
         used. In short: the tools themselves collect nothing, but the site is supported by
         third-party advertising, which uses cookies as described below.</p>
 
-      <h2>Information the tools collect</h2>
-      <p>Our printable generators run entirely in your browser. The choices you make (such as a
+      <h2 data-i18n="priv.h1">Information the tools collect</h2>
+      <p data-i18n-html="priv.p1">Our printable generators run entirely in your browser. The choices you make (such as a
         reading scope or start date) are used to build your result on your own device and are
         <strong>not</strong> transmitted to us or stored on any server. We do not require an
         account, and we do not ask for your name, email, or any personal details to use the tools.</p>
 
-      <h2>Analytics</h2>
-      <p>We may use privacy-friendly analytics to understand which tools are used and how the site
+      <h2 data-i18n="priv.h2">Analytics</h2>
+      <p data-i18n="priv.p2">We may use privacy-friendly analytics to understand which tools are used and how the site
         performs, in aggregate. This does not identify you personally.</p>
 
-      <h2>Advertising and cookies</h2>
-      <p>We use third-party advertising, including Google AdSense, to keep the tools free. Third-party
+      <h2 data-i18n="priv.h3">Advertising and cookies</h2>
+      <p data-i18n="priv.p3">We use third-party advertising, including Google AdSense, to keep the tools free. Third-party
         vendors, including Google, use cookies to serve ads based on your prior visits to this and
         other websites.</p>
       <ul>
-        <li>Google's use of advertising cookies enables it and its partners to serve ads to you
+        <li data-i18n="priv.li1">Google's use of advertising cookies enables it and its partners to serve ads to you
           based on your visit to this site and/or other sites on the Internet.</li>
-        <li>You may opt out of personalized advertising by visiting
+        <li data-i18n-html="priv.li2">You may opt out of personalized advertising by visiting
           <a href="https://www.google.com/settings/ads" rel="nofollow noopener" target="_blank">Google Ads Settings</a>.</li>
-        <li>You can also opt out of a third-party vendor's use of cookies for personalized
+        <li data-i18n-html="priv.li3">You can also opt out of a third-party vendor's use of cookies for personalized
           advertising at
           <a href="https://www.aboutads.info/choices/" rel="nofollow noopener" target="_blank">aboutads.info/choices</a>.</li>
       </ul>
-      <p>If you are located in the European Economic Area, the United Kingdom, or Switzerland, we ask
+      <p data-i18n="priv.p4">If you are located in the European Economic Area, the United Kingdom, or Switzerland, we ask
         for your consent before non-essential cookies (including advertising cookies) are used, and
         you may change or withdraw that consent at any time.</p>
 
-      <h2>Children</h2>
-      <p>This site is intended for a general audience and is not directed at children under 13. We do
+      <h2 data-i18n="priv.h4">Children</h2>
+      <p data-i18n="priv.p5">This site is intended for a general audience and is not directed at children under 13. We do
         not knowingly collect personal information from children.</p>
 
-      <h2>Changes to this policy</h2>
-      <p>We may update this policy from time to time. Changes take effect when posted on this page.</p>
+      <h2 data-i18n="priv.h5">Changes to this policy</h2>
+      <p data-i18n="priv.p6">We may update this policy from time to time. Changes take effect when posted on this page.</p>
 
-      <h2>Contact</h2>
-      <p>Questions about this policy? Write to
+      <h2 data-i18n="priv.h6">Contact</h2>
+      <p data-i18n-html="priv.p7">Questions about this policy? Write to
         <a href="mailto:xuhaowei2019@gmail.com">xuhaowei2019@gmail.com</a>.</p>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <span>© <span id="year">2026</span> Faith Printables · Free printable tools for your walk with God.</span>
-      <span><a href="privacy.html">Privacy</a> · <a href="about.html">About</a></span>
+      <span>© <span id="year">2026</span> <span data-i18n="footer.copy_suffix">Faith Printables · Free printable tools for your walk with God.</span></span>
+      <span><a href="privacy.html" data-i18n="footer.privacy">Privacy</a> · <a href="about.html" data-i18n="footer.about">About</a></span>
     </div>
   </footer>
+
+  <script src="js/i18n-common.js"></script>
+  <script>
+  window.I18N_PAGE = {
+    en: {
+      "priv.title": `Privacy Policy`,
+      "priv.updated": `<em>Last updated: 2026.</em>`,
+      "priv.intro": `This policy explains what information Faith Printables ("we", "us") collects and how it is used. In short: the tools themselves collect nothing, but the site is supported by third-party advertising, which uses cookies as described below.`,
+      "priv.h1": `Information the tools collect`,
+      "priv.p1": `Our printable generators run entirely in your browser. The choices you make (such as a reading scope or start date) are used to build your result on your own device and are <strong>not</strong> transmitted to us or stored on any server. We do not require an account, and we do not ask for your name, email, or any personal details to use the tools.`,
+      "priv.h2": `Analytics`,
+      "priv.p2": `We may use privacy-friendly analytics to understand which tools are used and how the site performs, in aggregate. This does not identify you personally.`,
+      "priv.h3": `Advertising and cookies`,
+      "priv.p3": `We use third-party advertising, including Google AdSense, to keep the tools free. Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this and other websites.`,
+      "priv.li1": `Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to this site and/or other sites on the Internet.`,
+      "priv.li2": `You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" rel="nofollow noopener" target="_blank">Google Ads Settings</a>.`,
+      "priv.li3": `You can also opt out of a third-party vendor's use of cookies for personalized advertising at <a href="https://www.aboutads.info/choices/" rel="nofollow noopener" target="_blank">aboutads.info/choices</a>.`,
+      "priv.p4": `If you are located in the European Economic Area, the United Kingdom, or Switzerland, we ask for your consent before non-essential cookies (including advertising cookies) are used, and you may change or withdraw that consent at any time.`,
+      "priv.h4": `Children`,
+      "priv.p5": `This site is intended for a general audience and is not directed at children under 13. We do not knowingly collect personal information from children.`,
+      "priv.h5": `Changes to this policy`,
+      "priv.p6": `We may update this policy from time to time. Changes take effect when posted on this page.`,
+      "priv.h6": `Contact`,
+      "priv.p7": `Questions about this policy? Write to <a href="mailto:xuhaowei2019@gmail.com">xuhaowei2019@gmail.com</a>.`
+    },
+    zh: {
+      "priv.title": `隐私政策`,
+      "priv.updated": `<em>最后更新：2026 年。</em>`,
+      "priv.intro": `本政策说明 Faith Printables（"我们"）会收集哪些信息、如何使用。简而言之：工具本身不收集任何信息，但本站靠第三方广告维持，广告会按下文所述使用 Cookie。`,
+      "priv.h1": `工具收集的信息`,
+      "priv.p1": `我们的可打印生成器完全在你的浏览器里运行。你所做的选择（比如读经范围或开始日期）只用于在你自己的设备上生成结果，<strong>不会</strong>传给我们或存到任何服务器。使用这些工具不需要账号，我们也不会索取你的姓名、邮箱或任何个人信息。`,
+      "priv.h2": `统计分析`,
+      "priv.p2": `我们可能使用注重隐私的统计工具，以汇总的方式了解哪些工具被使用、网站表现如何。这不会识别你的个人身份。`,
+      "priv.h3": `广告与 Cookie`,
+      "priv.p3": `我们使用包括 Google AdSense 在内的第三方广告，以保持工具免费。包括 Google 在内的第三方供应商会使用 Cookie，根据你此前对本站及其他网站的访问来投放广告。`,
+      "priv.li1": `Google 使用广告 Cookie，使它及其合作伙伴能够根据你对本站和/或互联网上其他网站的访问，向你投放广告。`,
+      "priv.li2": `你可以通过访问 <a href="https://www.google.com/settings/ads" rel="nofollow noopener" target="_blank">Google 广告设置</a> 退出个性化广告。`,
+      "priv.li3": `你也可以在 <a href="https://www.aboutads.info/choices/" rel="nofollow noopener" target="_blank">aboutads.info/choices</a> 退出第三方供应商为个性化广告使用 Cookie。`,
+      "priv.p4": `如果你身处欧洲经济区、英国或瑞士，我们会在使用非必要 Cookie（包括广告 Cookie）之前征得你的同意，你也可以随时更改或撤回该同意。`,
+      "priv.h4": `儿童`,
+      "priv.p5": `本站面向一般受众，并非针对 13 岁以下的儿童。我们不会在知情的情况下收集儿童的个人信息。`,
+      "priv.h5": `本政策的变更`,
+      "priv.p6": `我们可能会不时更新本政策。变更自发布到本页面时生效。`,
+      "priv.h6": `联系方式`,
+      "priv.p7": `对本政策有疑问？来信 <a href="mailto:xuhaowei2019@gmail.com">xuhaowei2019@gmail.com</a>。`
+    }
+  };
+  </script>
+  <script src="js/i18n.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   <!-- Cloudflare Web Analytics -->
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "88510c50ba01492f864a6d309e3aa100"}'></script>

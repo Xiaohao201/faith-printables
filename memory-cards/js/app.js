@@ -13,6 +13,10 @@
 
   if (!form) return;
 
+  function t(key) {
+    return window.i18n ? window.i18n.t(key) : key;
+  }
+
   function escapeHtml(text) {
     return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
@@ -22,16 +26,27 @@
     const row = document.createElement("div");
     row.className = "verse-row";
     row.innerHTML =
-      `<input type="text" class="verse-ref" placeholder="Reference (e.g. John 3:16)" aria-label="Verse reference">` +
-      `<textarea class="verse-text" rows="2" placeholder="Verse text — paste from your Bible or app" aria-label="Verse text"></textarea>` +
-      `<button type="button" class="row-remove" aria-label="Remove this verse" title="Remove">✕</button>`;
+      `<input type="text" class="verse-ref">` +
+      `<textarea class="verse-text" rows="2"></textarea>` +
+      `<button type="button" class="row-remove">✕</button>`;
     row.querySelector(".verse-ref").value = reference || "";
     row.querySelector(".verse-text").value = text || "";
+    localizeRow(row);
     row.querySelector(".row-remove").addEventListener("click", () => {
       row.remove();
       if (!rowsBox.querySelector(".verse-row")) addRow("", "");
     });
     return row;
+  }
+
+  function localizeRow(row) {
+    row.querySelector(".verse-ref").setAttribute("placeholder", t("mc.ph.ref"));
+    const ta = row.querySelector(".verse-text");
+    ta.setAttribute("placeholder", t("mc.ph.text"));
+    ta.setAttribute("aria-label", t("mc.aria.text"));
+    row.querySelector(".verse-ref").setAttribute("aria-label", t("mc.aria.ref"));
+    row.querySelector(".row-remove").setAttribute("aria-label", t("mc.aria.remove"));
+    row.querySelector(".row-remove").setAttribute("title", t("mc.aria.remove"));
   }
 
   function addRow(reference, text) {
@@ -48,6 +63,13 @@
   function showError(message) {
     errorBox.textContent = message;
     errorBox.hidden = false;
+  }
+
+  function errorMessage(error) {
+    if (!error.code) return error.message;
+    const key = "mc.err." + error.code;
+    const translated = t(key);
+    return translated === key ? error.message : translated;
   }
 
   function renderCard(verse, cardType, translation) {
@@ -72,9 +94,11 @@
     );
   }
 
+  let lastPlan = null;
+
   function render(plan) {
     const gridClass = plan.perPage === 8 ? "mc-grid-8" : "mc-grid-4";
-    const html = plan.pages
+    output.innerHTML = plan.pages
       .map((pageVerses) => {
         const cards = pageVerses
           .map((v) => renderCard(v, plan.cardType, plan.translation))
@@ -82,40 +106,50 @@
         return `<div class="mc-page ${gridClass}">${cards}</div>`;
       })
       .join("");
-    output.innerHTML = html;
 
-    const pageWord = plan.pages.length === 1 ? "page" : "pages";
-    const typeWord = plan.cardType === "fold" ? "fold-over" : "full";
-    captionBox.textContent =
-      `${plan.count} ${typeWord} card${plan.count === 1 ? "" : "s"} across ` +
-      `${plan.pages.length} ${pageWord}. Print, then cut along the card borders.`;
+    const type = t(plan.cardType === "fold" ? "mc.type.fold" : "mc.type.full");
+    captionBox.textContent = t("mc.caption")
+      .replace("{count}", plan.count)
+      .replace("{type}", type)
+      .replace("{pages}", plan.pages.length);
   }
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
+  function generate() {
     errorBox.hidden = true;
-
     try {
       const data = new FormData(form);
-      const plan = buildCardPlan({
+      lastPlan = buildCardPlan({
         verses: readVerses(),
         size: data.get("size"),
         cardType: data.get("cardType"),
         translation: data.get("translation"),
       });
-      render(plan);
+      render(lastPlan);
       resultSection.hidden = false;
-      resultSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      return true;
     } catch (error) {
-      showError(error.message || "Something went wrong. Please check your verses.");
+      showError(errorMessage(error));
       resultSection.hidden = true;
+      lastPlan = null;
+      return false;
     }
+  }
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (generate()) resultSection.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
   addBtn.addEventListener("click", () => {
     addRow("", "");
     const rows = rowsBox.querySelectorAll(".verse-row");
     rows[rows.length - 1].querySelector(".verse-ref").focus();
+  });
+
+  // On language switch: re-localize row placeholders and re-render the caption.
+  document.addEventListener("i18n:changed", () => {
+    rowsBox.querySelectorAll(".verse-row").forEach(localizeRow);
+    if (lastPlan) render(lastPlan);
   });
 
   if (printBtn) printBtn.addEventListener("click", () => window.print());

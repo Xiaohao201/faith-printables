@@ -4,7 +4,6 @@
 
   const form = document.querySelector("[data-worksheet-form]");
   const styleSelect = document.querySelector("[data-style]");
-  const countInput = document.querySelector("[data-count]");
   const countLabel = document.querySelector("[data-count-label]");
   const errorBox = document.querySelector("[data-error]");
   const resultSection = document.querySelector("[data-result]");
@@ -15,6 +14,10 @@
 
   const SIZE_CLASS = { large: "hw-lg", medium: "hw-md", small: "hw-sm" };
 
+  function t(key) {
+    return window.i18n ? window.i18n.t(key) : key;
+  }
+
   function escapeHtml(text) {
     return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
@@ -24,10 +27,17 @@
     errorBox.hidden = false;
   }
 
+  function errorMessage(error) {
+    if (!error.code) return error.message;
+    const key = "cw.err." + error.code;
+    const translated = t(key);
+    return translated === key ? error.message : translated;
+  }
+
   // Keep the count label meaningful as the style changes.
   function syncCountLabel() {
     countLabel.textContent =
-      styleSelect.value === "copy" ? "Blank practice lines" : "Times to repeat";
+      styleSelect.value === "copy" ? t("cw.count.copy") : t("cw.count.repeat");
   }
 
   function render(ws) {
@@ -35,8 +45,8 @@
 
     if (ws.showHeader) {
       parts.push(
-        `<div class="hw-header"><span>Name: ____________________</span>` +
-          `<span>Date: ____________</span></div>`
+        `<div class="hw-header"><span>${escapeHtml(t("cw.name"))}</span>` +
+          `<span>${escapeHtml(t("cw.date"))}</span></div>`
       );
     }
     if (ws.reference) {
@@ -57,13 +67,13 @@
     output.innerHTML = parts.join("");
   }
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    errorBox.hidden = true;
+  let lastWs = null;
 
+  function generate() {
+    errorBox.hidden = true;
     try {
       const data = new FormData(form);
-      const ws = buildWorksheet({
+      lastWs = buildWorksheet({
         reference: data.get("reference"),
         text: data.get("text"),
         style: data.get("style"),
@@ -71,16 +81,30 @@
         count: data.get("count"),
         showHeader: data.get("showHeader") === "on",
       });
-      render(ws);
+      render(lastWs);
       resultSection.hidden = false;
-      resultSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      return true;
     } catch (error) {
-      showError(error.message || "Something went wrong. Please check your inputs.");
+      showError(errorMessage(error));
       resultSection.hidden = true;
+      lastWs = null;
+      return false;
     }
+  }
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (generate()) resultSection.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
   styleSelect.addEventListener("change", syncCountLabel);
+
+  // On language switch: update the count label and re-render the sheet header.
+  document.addEventListener("i18n:changed", () => {
+    syncCountLabel();
+    if (lastWs) render(lastWs);
+  });
+
   if (printBtn) printBtn.addEventListener("click", () => window.print());
 
   syncCountLabel();

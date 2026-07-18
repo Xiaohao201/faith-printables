@@ -18,16 +18,20 @@
     <div class="wrap">
       <a class="brand" href="../index.html"><span class="mark">✦</span> Faith Printables</a>
       <nav class="site-nav">
-        <a href="../index.html">All tools</a>
-        <a href="../about.html">About</a>
+        <a href="../index.html" data-i18n="nav.all_tools">All tools</a>
+        <a href="../about.html" data-i18n="nav.about">About</a>
+        <span class="lang-switch">
+          <button type="button" data-lang-btn="en">EN</button>
+          <button type="button" data-lang-btn="zh">中文</button>
+        </span>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
     <section class="hero">
-      <h1>Bible Verse Handwriting Worksheets</h1>
-      <p class="lede">Turn any verse into a printable tracing or copywork sheet — perfect for Sunday
+      <h1 data-i18n="cw.title">Bible Verse Handwriting Worksheets</h1>
+      <p class="lede" data-i18n="cw.lede">Turn any verse into a printable tracing or copywork sheet — perfect for Sunday
         school, children's church, and homeschool. Children practise their handwriting while hiding
         God's Word in their hearts. Free, and nothing to sign up for.</p>
     </section>
@@ -36,32 +40,32 @@
       <div class="error-box" data-error hidden></div>
 
       <div class="field">
-        <label for="reference">Reference <span class="hint-inline">(optional — printed as the title)</span></label>
-        <input type="text" id="reference" name="reference" maxlength="60" placeholder="e.g. Psalm 23:1">
+        <label for="reference"><span data-i18n="cw.ref_label">Reference</span> <span class="hint-inline" data-i18n="cw.ref_hint">(optional — printed as the title)</span></label>
+        <input type="text" id="reference" name="reference" maxlength="60" data-i18n-ph="cw.ref_ph" placeholder="e.g. Psalm 23:1">
       </div>
 
       <div class="field">
-        <label for="text">Verse text</label>
-        <textarea id="text" name="text" rows="3"
+        <label for="text" data-i18n="cw.text_label">Verse text</label>
+        <textarea id="text" name="text" rows="3" data-i18n-ph="cw.text_ph"
           placeholder="Paste the verse from your Bible — e.g. The LORD is my shepherd; I shall not want."></textarea>
-        <p class="hint">Use whichever translation you like. Nothing you type is stored — the sheet is
+        <p class="hint" data-i18n="cw.text_hint">Use whichever translation you like. Nothing you type is stored — the sheet is
           built right here in your browser. Short verses work best for young children.</p>
       </div>
 
       <div class="field-row">
         <div class="field">
-          <label for="style">Worksheet style</label>
+          <label for="style" data-i18n="cw.style_label">Worksheet style</label>
           <select id="style" name="style" data-style>
-            <option value="trace">Trace — verse printed light for tracing over</option>
-            <option value="copy">Copy — a model line, then blank lines</option>
+            <option value="trace" data-i18n="cw.style.trace">Trace — verse printed light for tracing over</option>
+            <option value="copy" data-i18n="cw.style.copy">Copy — a model line, then blank lines</option>
           </select>
         </div>
         <div class="field">
-          <label for="size">Handwriting size</label>
+          <label for="size" data-i18n="cw.size_label">Handwriting size</label>
           <select id="size" name="size">
-            <option value="large">Large — young children</option>
-            <option value="medium">Medium</option>
-            <option value="small">Small — older children</option>
+            <option value="large" data-i18n="cw.size.large">Large — young children</option>
+            <option value="medium" data-i18n="cw.size.medium">Medium</option>
+            <option value="small" data-i18n="cw.size.small">Small — older children</option>
           </select>
         </div>
       </div>
@@ -74,68 +78,68 @@
         <div class="field">
           <label class="check-label">
             <input type="checkbox" name="showHeader" checked>
-            Include a Name / Date header
+            <span data-i18n="cw.header_check">Include a Name / Date header</span>
           </label>
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary">Make my worksheet</button>
+      <button type="submit" class="btn btn-primary" data-i18n="cw.submit">Make my worksheet</button>
     </form>
 
     <section class="result" data-result hidden>
       <div class="result-head">
-        <h2>Your worksheet</h2>
-        <button type="button" class="btn btn-ghost" data-print>🖨 Print / Save as PDF</button>
+        <h2 data-i18n="cw.result_title">Your worksheet</h2>
+        <button type="button" class="btn btn-ghost" data-print data-i18n="action.print">🖨 Print / Save as PDF</button>
       </div>
       <div class="worksheet-output" data-worksheet-output></div>
     </section>
 
     <section class="prose">
-      <h2>How to make a Bible verse handwriting worksheet</h2>
-      <p>Copying Scripture by hand is one of the oldest ways to learn it — slow enough that the words
+      <h2 data-i18n="cw.h.how">How to make a Bible verse handwriting worksheet</h2>
+      <p data-i18n="cw.p.how">Copying Scripture by hand is one of the oldest ways to learn it — slow enough that the words
         sink in. This free tool turns any verse into a clean practice page for children, whether
         they're just learning their letters or ready to copy a whole verse on their own.</p>
       <ul>
-        <li><strong>Enter a verse.</strong> Add a reference for the title (optional) and paste the
+        <li data-i18n-html="cw.li.1"><strong>Enter a verse.</strong> Add a reference for the title (optional) and paste the
           verse text from the translation you use.</li>
-        <li><strong>Choose tracing or copywork.</strong> <em>Trace</em> prints the verse in light
+        <li data-i18n-html="cw.li.2"><strong>Choose tracing or copywork.</strong> <em>Trace</em> prints the verse in light
           grey so a child can trace right over it. <em>Copy</em> shows the verse once as a model,
           then gives blank ruled lines to copy onto.</li>
-        <li><strong>Pick a size.</strong> Large lines for little hands, smaller lines as they grow.</li>
-        <li><strong>Print it.</strong> A Name and Date header makes it ready for a class set.</li>
+        <li data-i18n-html="cw.li.3"><strong>Pick a size.</strong> Large lines for little hands, smaller lines as they grow.</li>
+        <li data-i18n-html="cw.li.4"><strong>Print it.</strong> A Name and Date header makes it ready for a class set.</li>
       </ul>
 
-      <h2>Ideas for using these sheets</h2>
-      <p>These worksheets are a gentle fit for Sunday school centres, children's church, midweek
+      <h2 data-i18n="cw.h.ideas">Ideas for using these sheets</h2>
+      <p data-i18n="cw.p.ideas">These worksheets are a gentle fit for Sunday school centres, children's church, midweek
         clubs, and homeschool copywork. Pair a weekly memory verse with a matching tracing sheet, or
         let older children copy a short passage as morning work. Because you choose the verse and the
         translation, the sheet always matches what your family or class is learning together.</p>
 
       <div class="faq">
-        <h2>Frequently asked questions</h2>
+        <h2 data-i18n="cw.h.faq">Frequently asked questions</h2>
         <details>
-          <summary>Is this worksheet maker free?</summary>
-          <p>Yes — free, with no account and no email. Make and print as many sheets as you like.</p>
+          <summary data-i18n="cw.faq.q1">Is this worksheet maker free?</summary>
+          <p data-i18n="cw.faq.a1">Yes — free, with no account and no email. Make and print as many sheets as you like.</p>
         </details>
         <details>
-          <summary>Do you save the verses I enter?</summary>
-          <p>No. Everything is generated in your browser. Nothing you type is uploaded or stored. To
+          <summary data-i18n="cw.faq.q2">Do you save the verses I enter?</summary>
+          <p data-i18n="cw.faq.a2">No. Everything is generated in your browser. Nothing you type is uploaded or stored. To
             keep a sheet, print it or use your browser's "Save as PDF" option.</p>
         </details>
         <details>
-          <summary>What's the difference between tracing and copywork?</summary>
-          <p>Tracing prints the verse in light grey so a child traces directly over the letters —
+          <summary data-i18n="cw.faq.q3">What's the difference between tracing and copywork?</summary>
+          <p data-i18n="cw.faq.a3">Tracing prints the verse in light grey so a child traces directly over the letters —
             best for young children. Copywork shows the verse once as a model and then gives blank
             ruled lines for the child to write it themselves.</p>
         </details>
         <details>
-          <summary>Can I use it for a whole class?</summary>
-          <p>Yes. Keep the Name / Date header on, print one copy, then photocopy a class set — or
+          <summary data-i18n="cw.faq.q4">Can I use it for a whole class?</summary>
+          <p data-i18n="cw.faq.a4">Yes. Keep the Name / Date header on, print one copy, then photocopy a class set — or
             print straight from the tool for each child.</p>
         </details>
         <details>
-          <summary>Which Bible translation does it use?</summary>
-          <p>Whichever you paste in. The sheet uses your wording exactly, so it matches the Bible
+          <summary data-i18n="cw.faq.q5">Which Bible translation does it use?</summary>
+          <p data-i18n="cw.faq.a5">Whichever you paste in. The sheet uses your wording exactly, so it matches the Bible
             your class or family reads.</p>
         </details>
       </div>
@@ -144,8 +148,8 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <span>© <span id="year">2026</span> Faith Printables · Free printable tools for your walk with God.</span>
-      <span><a href="../privacy.html">Privacy</a> · <a href="../about.html">About</a></span>
+      <span>© <span id="year">2026</span> <span data-i18n="footer.copy_suffix">Faith Printables · Free printable tools for your walk with God.</span></span>
+      <span><a href="../privacy.html" data-i18n="footer.privacy">Privacy</a> · <a href="../about.html" data-i18n="footer.about">About</a></span>
     </div>
   </footer>
 
@@ -163,7 +167,102 @@
     "publisher": { "@type": "Organization", "name": "Faith Printables", "url": "https://faithprintables.com/" }
   }
   </script>
+
   <script src="js/copywork.js"></script>
+  <script src="../js/i18n-common.js"></script>
+  <script>
+  window.I18N_PAGE = {
+    en: {
+      "cw.title": `Bible Verse Handwriting Worksheets`,
+      "cw.lede": `Turn any verse into a printable tracing or copywork sheet — perfect for Sunday school, children's church, and homeschool. Children practise their handwriting while hiding God's Word in their hearts. Free, and nothing to sign up for.`,
+      "cw.ref_label": `Reference`,
+      "cw.ref_hint": `(optional — printed as the title)`,
+      "cw.ref_ph": `e.g. Psalm 23:1`,
+      "cw.text_label": `Verse text`,
+      "cw.text_ph": `Paste the verse from your Bible — e.g. The LORD is my shepherd; I shall not want.`,
+      "cw.text_hint": `Use whichever translation you like. Nothing you type is stored — the sheet is built right here in your browser. Short verses work best for young children.`,
+      "cw.style_label": `Worksheet style`,
+      "cw.style.trace": `Trace — verse printed light for tracing over`,
+      "cw.style.copy": `Copy — a model line, then blank lines`,
+      "cw.size_label": `Handwriting size`,
+      "cw.size.large": `Large — young children`,
+      "cw.size.medium": `Medium`,
+      "cw.size.small": `Small — older children`,
+      "cw.header_check": `Include a Name / Date header`,
+      "cw.submit": `Make my worksheet`,
+      "cw.result_title": `Your worksheet`,
+      "cw.count.repeat": `Times to repeat`,
+      "cw.count.copy": `Blank practice lines`,
+      "cw.name": `Name: ____________________`,
+      "cw.date": `Date: ____________`,
+      "cw.err.empty": `Add the verse text you'd like on the worksheet.`,
+      "cw.h.how": `How to make a Bible verse handwriting worksheet`,
+      "cw.p.how": `Copying Scripture by hand is one of the oldest ways to learn it — slow enough that the words sink in. This free tool turns any verse into a clean practice page for children, whether they're just learning their letters or ready to copy a whole verse on their own.`,
+      "cw.li.1": `<strong>Enter a verse.</strong> Add a reference for the title (optional) and paste the verse text from the translation you use.`,
+      "cw.li.2": `<strong>Choose tracing or copywork.</strong> <em>Trace</em> prints the verse in light grey so a child can trace right over it. <em>Copy</em> shows the verse once as a model, then gives blank ruled lines to copy onto.`,
+      "cw.li.3": `<strong>Pick a size.</strong> Large lines for little hands, smaller lines as they grow.`,
+      "cw.li.4": `<strong>Print it.</strong> A Name and Date header makes it ready for a class set.`,
+      "cw.h.ideas": `Ideas for using these sheets`,
+      "cw.p.ideas": `These worksheets are a gentle fit for Sunday school centres, children's church, midweek clubs, and homeschool copywork. Pair a weekly memory verse with a matching tracing sheet, or let older children copy a short passage as morning work. Because you choose the verse and the translation, the sheet always matches what your family or class is learning together.`,
+      "cw.h.faq": `Frequently asked questions`,
+      "cw.faq.q1": `Is this worksheet maker free?`,
+      "cw.faq.a1": `Yes — free, with no account and no email. Make and print as many sheets as you like.`,
+      "cw.faq.q2": `Do you save the verses I enter?`,
+      "cw.faq.a2": `No. Everything is generated in your browser. Nothing you type is uploaded or stored. To keep a sheet, print it or use your browser's "Save as PDF" option.`,
+      "cw.faq.q3": `What's the difference between tracing and copywork?`,
+      "cw.faq.a3": `Tracing prints the verse in light grey so a child traces directly over the letters — best for young children. Copywork shows the verse once as a model and then gives blank ruled lines for the child to write it themselves.`,
+      "cw.faq.q4": `Can I use it for a whole class?`,
+      "cw.faq.a4": `Yes. Keep the Name / Date header on, print one copy, then photocopy a class set — or print straight from the tool for each child.`,
+      "cw.faq.q5": `Which Bible translation does it use?`,
+      "cw.faq.a5": `Whichever you paste in. The sheet uses your wording exactly, so it matches the Bible your class or family reads.`
+    },
+    zh: {
+      "cw.title": `圣经经文手写练习页`,
+      "cw.lede": `把任意一节经文变成可打印的描红或抄写练习纸 —— 特别适合主日学、儿童崇拜和在家教育。孩子在练字的同时，把神的话藏在心里。免费，无需注册。`,
+      "cw.ref_label": `引用`,
+      "cw.ref_hint": `（可选 —— 会印成标题）`,
+      "cw.ref_ph": `例如 诗篇 23:1`,
+      "cw.text_label": `经文正文`,
+      "cw.text_ph": `从你的圣经里粘贴经文 —— 例如：耶和华是我的牧者，我必不至缺乏。`,
+      "cw.text_hint": `用你喜欢的任何译本。你输入的内容不会被保存 —— 练习纸就在你的浏览器里生成。给年幼的孩子用，短一点的经文效果最好。`,
+      "cw.style_label": `练习纸样式`,
+      "cw.style.trace": `描红 —— 经文以浅色印出，供孩子描摹`,
+      "cw.style.copy": `抄写 —— 先给一行范例，再留空行`,
+      "cw.size_label": `字体大小`,
+      "cw.size.large": `大 —— 年幼的孩子`,
+      "cw.size.medium": `中`,
+      "cw.size.small": `小 —— 较大的孩子`,
+      "cw.header_check": `包含 姓名 / 日期 表头`,
+      "cw.submit": `生成我的练习纸`,
+      "cw.result_title": `你的练习纸`,
+      "cw.count.repeat": `重复次数`,
+      "cw.count.copy": `空白练习行数`,
+      "cw.name": `姓名：____________________`,
+      "cw.date": `日期：____________`,
+      "cw.err.empty": `请填写你想放在练习纸上的经文正文。`,
+      "cw.h.how": `怎么制作圣经经文手写练习纸`,
+      "cw.p.how": `亲手抄写圣经，是学习圣经最古老的方式之一 —— 慢到足以让字句沉进心里。这个免费工具能把任意一节经文变成一张干净的练习纸：无论孩子刚开始学写字母，还是已经能独立抄写整节经文。`,
+      "cw.li.1": `<strong>输入一节经文。</strong>加一个引用作标题（可选），再从你用的译本里粘贴经文正文。`,
+      "cw.li.2": `<strong>选择描红或抄写。</strong><em>描红</em>把经文以浅灰色印出，孩子直接照着描。<em>抄写</em>先给出一行范例，再留出空白格线供孩子照抄。`,
+      "cw.li.3": `<strong>选择大小。</strong>小手用大格线，随着长大再换小一点的。`,
+      "cw.li.4": `<strong>打印。</strong>加上姓名和日期表头，就能当整班的作业纸。`,
+      "cw.h.ideas": `这些练习纸的用法建议`,
+      "cw.p.ideas": `这些练习纸很适合主日学、儿童崇拜、周间聚会和在家教育的抄经。把每周的背诵经文配一张对应的描红纸；或让大一点的孩子把一小段经文当作晨间功课来抄。因为经文和译本都由你选定，练习纸总能和你家里或班上正在学的内容一致。`,
+      "cw.h.faq": `常见问题`,
+      "cw.faq.q1": `这个练习纸工具免费吗？`,
+      "cw.faq.a1": `是的 —— 免费，无需账号、也不用邮箱。想做多少张、打印多少张都可以。`,
+      "cw.faq.q2": `你会保存我输入的经文吗？`,
+      "cw.faq.a2": `不会。一切都在你的浏览器里生成，你输入的内容不会上传或存储。想保留就打印，或用浏览器的"存为 PDF"。`,
+      "cw.faq.q3": `描红和抄写有什么区别？`,
+      "cw.faq.a3": `描红把经文以浅灰色印出，孩子直接照着描 —— 适合年幼的孩子。抄写先给出一行范例，再留出空白格线让孩子自己写。`,
+      "cw.faq.q4": `可以给一整班用吗？`,
+      "cw.faq.a4": `可以。保留姓名 / 日期表头，打印一张再复印整班 —— 或直接从工具里给每个孩子各打印一张。`,
+      "cw.faq.q5": `它用哪个圣经译本？`,
+      "cw.faq.a5": `用你粘贴进去的那个。练习纸完全用你的文字，所以和你班上或家里读的圣经一致。`
+    }
+  };
+  </script>
+  <script src="../js/i18n.js"></script>
   <script src="js/app.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   <!-- Cloudflare Web Analytics -->

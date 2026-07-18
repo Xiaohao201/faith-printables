@@ -8,7 +8,9 @@ const MAX_COUNT = 30;
 function buildWorksheet(options) {
   const text = (options.text || "").trim();
   if (text === "") {
-    throw new Error("Add the verse text you'd like on the worksheet.");
+    const err = new Error("Add the verse text you'd like on the worksheet.");
+    err.code = "empty";
+    throw err;
   }
 
   const reference = (options.reference || "").trim();
