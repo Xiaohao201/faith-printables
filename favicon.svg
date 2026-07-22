@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Faith Printables">
+  <rect width="64" height="64" rx="14" fill="#9a6b3f"/>
+  <path d="M13 19c6-3 12.5-3 19 1 6.5-4 13-4 19-1v26c-6-3-12.5-3-19 1-6.5-4-13-4-19-1V19z"
+        fill="#fbf7f0"/>
+  <path d="M32 21v25" stroke="#9a6b3f" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <path d="M18 25c4-1.6 8-1.6 12 .4M18 31c4-1.6 8-1.6 12 .4M34 25.4c4-2 8-2 12-.4M34 31.4c4-2 8-2 12-.4"
+        stroke="#c9a06a" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+</svg>
