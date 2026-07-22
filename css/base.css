@@ -484,6 +484,26 @@ a { color: var(--brand-dark); }
 .cta-box h3 { margin: 0 0 6px; }
 .cta-box p { margin: 0 0 14px; color: var(--ink-soft); }
 
+.quick-answer {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--brand);
+  border-radius: 10px;
+  padding: 14px 20px;
+  margin: 6px 0 28px;
+}
+.quick-answer p { margin: 0; color: var(--ink-soft); }
+.quick-answer .qa-label {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--brand-dark);
+  margin-bottom: 4px;
+}
+
 .post-list { list-style: none; padding: 0; margin: 24px 0; }
 .post-list li {
   border: 1px solid var(--line);
